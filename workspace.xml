@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7622e13f-af3f-41ea-8931-d9439fdc64e0" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.010598471308185" />
+      <entry key="MS500" value="1.402762145524375" />
+      <entry key="S2" value="1.7966400962855826" />
+      <entry key="S5" value="1.9130716626281057" />
+      <entry key="S10" value="1.9555478337729126" />
+      <entry key="S30" value="1.984957468088159" />
+      <entry key="S60" value="1.992450234565018" />
+      <entry key="M2" value="1.996217965915832" />
+      <entry key="M5" value="1.9987798069861227" />
+      <entry key="M10" value="2.0235030201870368" />
+      <entry key="M15" value="2.1050798500677455" />
+      <entry key="M30" value="2.4592750791404443" />
+      <entry key="H1" value="2.958545032191836" />
+      <entry key="H2" value="3.3846174119254893" />
+      <entry key="H4" value="3.6641079192114674" />
+      <entry key="D1" value="3.939644309256644" />
+      <entry key="W1" value="3.9912641335980767" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="5.331944723760193E-230" />
+      <entry key="S10" value="2.3091004143952235E-115" />
+      <entry key="S30" value="6.134995846989875E-39" />
+      <entry key="S60" value="7.832621430268334E-20" />
+      <entry key="M2" value="2.798682088102958E-10" />
+      <entry key="M5" value="1.5093203488800378E-4" />
+      <entry key="M10" value="0.0122854399550038" />
+      <entry key="M15" value="0.053242749629708146" />
+      <entry key="M30" value="0.23074390485927926" />
+      <entry key="H1" value="0.4803581006491713" />
+      <entry key="H2" value="0.6930787117270095" />
+      <entry key="H4" value="0.8325134904174284" />
+      <entry key="D1" value="0.9699109891816302" />
+      <entry key="W1" value="0.995645085201625" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.010598471308184932" />
+      <entry key="MS500" value="0.4027621467983641" />
+      <entry key="S2" value="0.8026144567460621" />
+      <entry key="S5" value="1.0420499389871951" />
+      <entry key="S10" value="1.3146832906120967" />
+      <entry key="S30" value="1.695766211822023" />
+      <entry key="S60" value="1.835544976414274" />
+      <entry key="M2" value="1.914419873093185" />
+      <entry key="M5" value="1.9653693115054418" />
+      <entry key="M10" value="2.018772796764167" />
+      <entry key="M15" value="2.1467398807572393" />
+      <entry key="M30" value="2.6837625398210596" />
+      <entry key="H1" value="3.4354548468662105" />
+      <entry key="H2" value="4.075836236473411" />
+      <entry key="H4" value="4.495647042772569" />
+      <entry key="D1" value="4.909385613353028" />
+      <entry key="W1" value="4.986884783062012" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Gldj7RQ889C32MjGWuAMAup2JG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PropertyHubBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="PropertyHubBackend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="PropertyHubBackend" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="PropertyHubBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="propertyhub" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.propertyhub.PropertyHubBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7622e13f-af3f-41ea-8931-d9439fdc64e0" name="Changes" comment="" />
+      <created>1784550222022</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784550222022</updated>
+      <workItem from="1784550226280" duration="608000" />
+      <workItem from="1785392231275" duration="15000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
