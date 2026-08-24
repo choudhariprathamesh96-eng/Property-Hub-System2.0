@@ -152,11 +152,11 @@ function displayProperties(list) {
         card.innerHTML = `
 
             <img
-                src="../../assets/images/${image}"
+                src="${image}"
                 alt="${title}"
                 onerror="
                     this.onerror=null;
-                    this.src='../../assets/images/apartment1.png';
+                    this.src='apartment1.png';
                 "
             >
 
@@ -323,7 +323,7 @@ function viewProperty(id) {
     }
 
     window.location.href =
-        "../Customer/property-detail.html?id=" + id;
+        "property-detail.html?id=" + id;
 
 }
 
@@ -339,7 +339,7 @@ function editProperty(id) {
     }
 
     window.location.href =
-        "../Owner/add-property.html?id=" + id;
+        "add-property.html?id=" + id;
 
 }
 
