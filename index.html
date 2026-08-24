@@ -8,12 +8,17 @@
 
     <title>Property Hub | Home</title>
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="theme.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="theme.css">
+
     <!-- Font Awesome -->
-     
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
 </head>
 
@@ -26,86 +31,141 @@
         <nav class="navbar">
 
             <div class="logo">
-                <h2> Property Hub</h2>
+                <h2>Property Hub</h2>
             </div>
 
             <ul class="nav-links">
-<li><a href="index.html">Home</a></li>
 
-<li><a href="my-properties.html?type=buy">Buy</a></li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
 
-<li><a href="my-properties.html?type=rent">Rent</a></li>
+                <li>
+                    <a href="my-properties.html?type=buy">
+                        Buy
+                    </a>
+                </li>
 
-<li><a href="my-properties.html?type=commercial">Commercial</a></li>
+                <li>
+                    <a href="my-properties.html?type=rent">
+                        Rent
+                    </a>
+                </li>
 
-<li><a href="about.html">About</a></li>
+                <li>
+                    <a href="my-properties.html?type=commercial">
+                        Commercial
+                    </a>
+                </li>
 
-<li><a href="faq.html">FAQ</a></li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-<li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <li>
+                    <a href="faq.html">
+                        FAQ
+                    </a>
+                </li>
 
-<li><a href="terms.html">Terms & Conditions</a></li>
+                <li>
+                    <a href="privacy-policy.html">
+                        Privacy Policy
+                    </a>
+                </li>
 
-<li><a href="contact-owner.html">Contact</a></li>
+                <li>
+                    <a href="terms.html">
+                        Terms & Conditions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact-owner.html">
+                        Contact
+                    </a>
+                </li>
 
             </ul>
 
+
+            <!-- Navigation Buttons -->
+
             <div class="nav-buttons">
+
+                <!-- Notifications -->
 
                 <div class="notification">
 
-    <button id="notificationBtn" class="notification-btn">
+                    <button
+                        id="notificationBtn"
+                        class="notification-btn"
+                        type="button"
+                    >
 
-        <i class="fa-solid fa-bell"></i>
+                        <i class="fa-solid fa-bell"></i>
 
-        <span id="notificationCount">3</span>
+                        <span id="notificationCount">
+                            3
+                        </span>
 
-    </button>
+                    </button>
 
-    <div id="notificationDropdown" class="notification-dropdown">
 
-        <h3>Notifications</h3>
+                    <div
+                        id="notificationDropdown"
+                        class="notification-dropdown"
+                    >
 
-        <hr>
+                        <h3>
+                            Notifications
+                        </h3>
 
-        <div class="notification-item">
+                        <hr>
 
-            🏠 New Luxury Apartment added in Pune
 
-        </div>
+                        <div class="notification-item">
+                            🏠 New Luxury Apartment added in Pune
+                        </div>
 
-        <div class="notification-item">
+                        <div class="notification-item">
+                            ❤️ Property added to Wishlist
+                        </div>
 
-            ❤️ Property added to Wishlist
+                        <div class="notification-item">
+                            📩 Your enquiry has been sent successfully
+                        </div>
 
-        </div>
+                        <div class="notification-item">
+                            💰 Price dropped for Modern Villa
+                        </div>
 
-        <div class="notification-item">
+                    </div>
 
-            📩 Your enquiry has been sent successfully
+                </div>
 
-        </div>
 
-        <div class="notification-item">
-
-            💰 Price dropped for Modern Villa
-
-        </div>
-
-    </div>
-
-</div>
+                <!-- Login -->
 
                 <a href="login.html">
-                    <button class="login-btn">
+
+                    <button
+                        class="login-btn"
+                        type="button"
+                    >
                         Login
                     </button>
+
                 </a>
+
             </div>
 
         </nav>
 
     </header>
+
 
     <!-- ================= HERO ================= -->
 
@@ -113,51 +173,109 @@
 
         <div class="hero-content">
 
-            <h1>Find Your Dream Property</h1>
+            <h1>
+                Find Your Dream Property
+            </h1>
 
             <p>
                 Buy, Rent and Explore Verified Properties Across India.
             </p>
+
+
+            <!-- Search Box -->
 
             <div class="search-box">
 
                 <input
                     type="text"
                     id="searchInput"
-                    placeholder="Search Property, City or Locality">
+                    placeholder="Search Property, City or Locality"
+                >
+
 
                 <select id="propertyType">
 
-                    <option value="">Property Type</option>
-                    <option>Apartment</option>
-                    <option>Villa</option>
-                    <option>House</option>
-                    <option>Commercial</option>
+                    <option value="">
+                        Property Type
+                    </option>
+
+                    <option value="Apartment">
+                        Apartment
+                    </option>
+
+                    <option value="Villa">
+                        Villa
+                    </option>
+
+                    <option value="House">
+                        House
+                    </option>
+
+                    <option value="Commercial">
+                        Commercial
+                    </option>
 
                 </select>
+
 
                 <select id="bedrooms">
 
-                    <option value="">Bedrooms</option>
-                    <option>1 BHK</option>
-                    <option>2 BHK</option>
-                    <option>3 BHK</option>
-                    <option>4 BHK</option>
-                    <option>5 BHK</option>
+                    <option value="">
+                        Bedrooms
+                    </option>
+
+                    <option value="1">
+                        1 BHK
+                    </option>
+
+                    <option value="2">
+                        2 BHK
+                    </option>
+
+                    <option value="3">
+                        3 BHK
+                    </option>
+
+                    <option value="4">
+                        4 BHK
+                    </option>
+
+                    <option value="5">
+                        5 BHK
+                    </option>
 
                 </select>
+
 
                 <select id="priceRange">
 
-                    <option value="">Price Range</option>
-                    <option value="10000">Below ₹10,000</option>
-                    <option value="20000">₹10,000 - ₹20,000</option>
-                    <option value="50000">₹20,000 - ₹50,000</option>
-                    <option value="100000">Above ₹50,000</option>
+                    <option value="">
+                        Price Range
+                    </option>
+
+                    <option value="10000">
+                        Below ₹10,000
+                    </option>
+
+                    <option value="20000">
+                        ₹10,000 - ₹20,000
+                    </option>
+
+                    <option value="50000">
+                        ₹20,000 - ₹50,000
+                    </option>
+
+                    <option value="100000">
+                        Above ₹50,000
+                    </option>
 
                 </select>
 
-                <button id="searchBtn">
+
+                <button
+                    id="searchBtn"
+                    type="button"
+                >
 
                     <i class="fa-solid fa-magnifying-glass"></i>
 
@@ -171,295 +289,494 @@
 
     </section>
 
+
     <!-- ================= FEATURED PROPERTIES ================= -->
 
-<section class="featured">
+    <section class="featured">
 
-    <h2>Featured Properties</h2>
+        <h2>
+            Featured Properties
+        </h2>
 
-    <div class="property-container" id="propertyContainer">
 
-        <!-- Properties from database will appear here -->
+        <div
+            class="property-container"
+            id="propertyContainer"
+        >
 
-    </div>
-
-</section>
-<!-- ================= CATEGORIES ================= -->
-
-<section class="categories">
-
-    <h2>Browse Property Categories</h2>
-
-    <div class="category-container">
-
-        <div class="category">
-
-            <i class="fa-solid fa-building"></i>
-
-            <h3>Apartment</h3>
-
-            <p>Modern apartments in prime locations.</p>
+            <!--
+                Properties from Spring Boot
+                database will appear here.
+            -->
 
         </div>
 
-        <div class="category">
+    </section>
 
-            <i class="fa-solid fa-house"></i>
 
-            <h3>Villa</h3>
+    <!-- ================= CATEGORIES ================= -->
 
-            <p>Luxury villas with premium amenities.</p>
+    <section class="categories">
 
-        </div>
+        <h2>
+            Browse Property Categories
+        </h2>
 
-        <div class="category">
 
-            <i class="fa-solid fa-city"></i>
+        <div class="category-container">
 
-            <h3>Commercial</h3>
 
-            <p>Office spaces, shops and commercial buildings.</p>
+            <!-- Apartment -->
 
-        </div>
+            <div class="category">
 
-        <div class="category">
+                <i class="fa-solid fa-building"></i>
 
-            <i class="fa-solid fa-hotel"></i>
+                <h3>
+                    Apartment
+                </h3>
 
-            <h3>PG / Hostel</h3>
+                <p>
+                    Modern apartments in prime locations.
+                </p>
 
-            <p>Affordable PG and hostel accommodation.</p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section class="why-us">
-
-    <h2>Why Choose Property Hub?</h2>
-
-    <div class="features">
-
-        <div class="feature-box">
-
-            <i class="fa-solid fa-circle-check"></i>
-
-            <h3>Verified Properties</h3>
-
-            <p>
-                Every property is verified before being listed to ensure
-                a safe and trusted experience.
-            </p>
-
-        </div>
-
-        <div class="feature-box">
-
-            <i class="fa-solid fa-user-shield"></i>
-
-            <h3>Trusted Owners</h3>
-
-            <p>
-                Connect directly with genuine owners and verified agents
-                without unnecessary middlemen.
-            </p>
-
-        </div>
-
-        <div class="feature-box">
-
-            <i class="fa-solid fa-magnifying-glass"></i>
-
-            <h3>Smart Search</h3>
-
-            <p>
-                Search properties quickly using city, budget,
-                property type and bedroom filters.
-            </p>
-
-        </div>
-
-        <div class="feature-box">
-
-            <i class="fa-solid fa-headset"></i>
-
-            <h3>24 × 7 Support</h3>
-
-            <p>
-                Our support team is available anytime to help
-                buyers, renters and property owners.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- ================= STATS ================= -->
-
-<!-- ================= STATS / OUR IMPACT ================= -->
-
-<section class="stats">
-
-    <div class="stats-content">
-
-        <div class="stats-heading">
-            <span>Our Impact</span>
-            <h2>Trusted by Thousands</h2>
-            <p>
-                Helping people find the perfect property across India.
-            </p>
-        </div>
-
-        <div class="stats-container">
-
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h2>5000+</h2>
-                <p>Verified Properties</p>
             </div>
 
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-face-smile"></i>
-                </div>
-                <h2>2500+</h2>
-                <p>Happy Customers</p>
+
+            <!-- Villa -->
+
+            <div class="category">
+
+                <i class="fa-solid fa-house"></i>
+
+                <h3>
+                    Villa
+                </h3>
+
+                <p>
+                    Luxury villas with premium amenities.
+                </p>
+
             </div>
 
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-city"></i>
-                </div>
-                <h2>150+</h2>
-                <p>Cities Covered</p>
+
+            <!-- Commercial -->
+
+            <div class="category">
+
+                <i class="fa-solid fa-city"></i>
+
+                <h3>
+                    Commercial
+                </h3>
+
+                <p>
+                    Office spaces, shops and commercial buildings.
+                </p>
+
             </div>
 
-            <div class="stat-box">
-                <div class="stat-icon">
-                    <i class="fa-solid fa-headset"></i>
-                </div>
-                <h2>24/7</h2>
-                <p>Customer Support</p>
+
+            <!-- PG / Hostel -->
+
+            <div class="category">
+
+                <i class="fa-solid fa-hotel"></i>
+
+                <h3>
+                    PG / Hostel
+                </h3>
+
+                <p>
+                    Affordable PG and hostel accommodation.
+                </p>
+
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-<!-- ================= FOOTER ================= -->
+    <!-- ================= WHY CHOOSE US ================= -->
 
-<footer>
+    <section class="why-us">
 
-    <div class="footer-content">
+        <h2>
+            Why Choose Property Hub?
+        </h2>
 
-        <div class="footer-section">
 
-            <h3>Property Hub</h3>
+        <div class="features">
 
-            <p>
-                India's trusted platform to buy, rent and sell
-                residential and commercial properties.
-            </p>
+
+            <!-- Verified Properties -->
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <h3>
+                    Verified Properties
+                </h3>
+
+                <p>
+                    Every property is verified before being listed
+                    to ensure a safe and trusted experience.
+                </p>
+
+            </div>
+
+
+            <!-- Trusted Owners -->
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <h3>
+                    Trusted Owners
+                </h3>
+
+                <p>
+                    Connect directly with genuine owners and
+                    verified agents without unnecessary middlemen.
+                </p>
+
+            </div>
+
+
+            <!-- Smart Search -->
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>
+                    Smart Search
+                </h3>
+
+                <p>
+                    Search properties quickly using city, budget,
+                    property type and bedroom filters.
+                </p>
+
+            </div>
+
+
+            <!-- Support -->
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-headset"></i>
+
+                <h3>
+                    24 × 7 Support
+                </h3>
+
+                <p>
+                    Our support team is available anytime to help
+                    buyers, renters and property owners.
+                </p>
+
+            </div>
 
         </div>
 
-       <div class="footer-section">
+    </section>
 
-    <h3>Quick Links</h3>
 
-    <ul>
+    <!-- ================= STATS ================= -->
 
-        <li><a href="index.html">Home</a></li>
+    <section class="stats">
 
-        <li><a href="my-properties.html">Properties</a></li>
+        <div class="stats-content">
 
-        <li><a href="about.html">About Us</a></li>
 
-        <li><a href="faq.html">FAQ</a></li>
+            <div class="stats-heading">
 
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                <span>
+                    Our Impact
+                </span>
 
-        <li><a href="terms.html">Terms & Conditions</a></li>
+                <h2>
+                    Trusted by Thousands
+                </h2>
 
-        <li><a href="forgot-password.html">Forgot Password</a></li>
+                <p>
+                    Helping people find the perfect property
+                    across India.
+                </p>
 
-        <li><a href="contact-owner.html">Contact Us</a></li>
+            </div>
 
-    </ul>
 
-</div>
-        <div class="footer-section">
+            <div class="stats-container">
 
-            <h3>Contact</h3>
 
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                +91 9876543210
-            </p>
+                <!-- Verified Properties -->
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                propertyhub@gmail.com
-            </p>
+                <div class="stat-box">
 
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                Pune, Maharashtra
-            </p>
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <h2>
+                        5000+
+                    </h2>
+
+                    <p>
+                        Verified Properties
+                    </p>
+
+                </div>
+
+
+                <!-- Customers -->
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-face-smile"></i>
+
+                    </div>
+
+                    <h2>
+                        2500+
+                    </h2>
+
+                    <p>
+                        Happy Customers
+                    </p>
+
+                </div>
+
+
+                <!-- Cities -->
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-city"></i>
+
+                    </div>
+
+                    <h2>
+                        150+
+                    </h2>
+
+                    <p>
+                        Cities Covered
+                    </p>
+
+                </div>
+
+
+                <!-- Support -->
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <h2>
+                        24/7
+                    </h2>
+
+                    <p>
+                        Customer Support
+                    </p>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-    <hr>
 
-    <p class="copyright">
+    <!-- ================= FOOTER ================= -->
 
-        © 2026 Property Hub System | All Rights Reserved.
+    <footer>
 
-    </p>
+        <div class="footer-content">
 
-</footer>
 
-<!-- ================= SCROLL TO TOP ================= -->
+            <!-- About -->
 
-<button id="scrollTopBtn">
+            <div class="footer-section">
 
-    <i class="fa-solid fa-arrow-up"></i>
+                <h3>
+                    Property Hub
+                </h3>
 
-</button>
+                <p>
+                    India's trusted platform to buy, rent and sell
+                    residential and commercial properties.
+                </p>
 
-<!-- ================= DARK MODE ================= -->
+            </div>
 
-<button id="darkModeBtn">
 
-    🌙
+            <!-- Quick Links -->
 
-</button>
+            <div class="footer-section">
 
-<!-- ================= JAVASCRIPT ================= -->
+                <h3>
+                    Quick Links
+                </h3>
 
-<script src="home.js"></script>
+                <ul>
 
-<script src="scripts.js"></script>
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
 
-<script src="auth.js"></script>
+                    <li>
+                        <a href="my-properties.html">
+                            Properties
+                        </a>
+                    </li>
 
-<script src="dark-mode.js"></script>
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
 
-<script src="search.js"></script>
+                    <li>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
 
-<script src="scroll.js"></script>
+                    <li>
+                        <a href="privacy-policy.html">
+                            Privacy Policy
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="terms.html">
+                            Terms & Conditions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="forgot-password.html">
+                            Forgot Password
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact-owner.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+
+            <div class="footer-section">
+
+                <h3>
+                    Contact
+                </h3>
+
+                <p>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +91 9876543210
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    propertyhub@gmail.com
+
+                </p>
+
+                <p>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Pune, Maharashtra
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="copyright">
+
+            © 2026 Property Hub System |
+            All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+
+    <!-- ================= SCROLL TO TOP ================= -->
+
+    <button
+        id="scrollTopBtn"
+        type="button"
+    >
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- ================= DARK MODE ================= -->
+
+    <button
+        id="darkModeBtn"
+        type="button"
+    >
+
+        🌙
+
+    </button>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="home.js"></script>
+
+    <script src="scripts.js"></script>
+
+    <script src="auth.js"></script>
+
+    <script src="dark-mode.js"></script>
+
+    <script src="search.js"></script>
+
+    <script src="scroll.js"></script>
 
 </body>
 
