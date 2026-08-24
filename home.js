@@ -9,7 +9,12 @@ console.log("Home Page Loaded");
 // API
 // ==========================================
 
-https://property-hub-system2.netlify.app
+// IMPORTANT:
+// Put your DEPLOYED Spring Boot backend URL here.
+// Do NOT put your Netlify frontend URL here.
+// Do NOT use localhost for the deployed Netlify website.
+
+const API_URL = "YOUR_SPRING_BOOT_BACKEND_URL/properties";
 
 // ==========================================
 // Load Properties
@@ -32,7 +37,10 @@ function loadProperties() {
 
         .then(properties => {
 
-            console.log("Properties received from API:", properties);
+            console.log(
+                "Properties received from API:",
+                properties
+            );
 
             const container =
                 document.getElementById("propertyContainer");
@@ -68,7 +76,8 @@ function loadProperties() {
 
             properties.forEach(property => {
 
-                const card = document.createElement("div");
+                const card =
+                    document.createElement("div");
 
                 card.className = "property-card";
 
@@ -90,68 +99,54 @@ function loadProperties() {
                         </button>
 
                         <img
-                            src="${property.image}"
-                            alt="${property.title}"
+                            src="${property.image || 'apartment1.png'}"
+                            alt="${property.title || 'Property'}"
                             class="property-image"
                             onerror="this.src='apartment1.png'">
 
                     </div>
 
-
                     <div class="property-content">
 
                         <h3>
-                            ${property.title}
+                            ${property.title || "Untitled Property"}
                         </h3>
 
                         <p class="location">
 
                             <i class="fa-solid fa-location-dot"></i>
 
-                            ${property.location}
+                            ${property.location || "Location unavailable"}
 
                         </p>
-
 
                         <div class="property-info">
 
                             <span>
-
                                 <i class="fa-solid fa-bed"></i>
-
                                 ${property.bedrooms || 0} BHK
-
                             </span>
 
-
                             <span>
-
                                 <i class="fa-solid fa-bath"></i>
-
                                 ${property.bathrooms || 0} Bath
-
                             </span>
 
-
                             <span>
-
                                 <i class="fa-solid fa-ruler-combined"></i>
-
                                 ${property.area || 0} Sq.ft
-
                             </span>
 
                         </div>
 
-
                         <h2 class="price">
 
-                            ₹${Number(property.price).toLocaleString("en-IN")}
+                            ₹${Number(property.price || 0)
+                                .toLocaleString("en-IN")}
 
                             <span>/ Month</span>
 
                         </h2>
-
 
                         <div class="property-buttons">
 
@@ -166,7 +161,6 @@ function loadProperties() {
                             </button>
 
                         </div>
-
 
                         <button
                             class="contact-btn"
@@ -213,8 +207,8 @@ function loadProperties() {
                         </h2>
 
                         <p>
-                            Please make sure the Spring Boot
-                            server is running.
+                            Unable to connect to the
+                            Property Hub server.
                         </p>
 
                     </div>
