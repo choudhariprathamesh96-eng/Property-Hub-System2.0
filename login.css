@@ -1,0 +1,302 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+
+    width:1000px;
+    max-width:100%;
+    min-height:620px;
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    display:flex;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+/* ===========================
+   LEFT PANEL
+=========================== */
+
+.left-panel{
+
+    width:40%;
+    background:linear-gradient(135deg,#1d4ed8,#0f172a);
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+
+}
+
+.left-panel h1{
+
+    font-size:40px;
+    margin-bottom:20px;
+
+}
+
+.left-panel h2{
+
+    margin-bottom:20px;
+    font-size:30px;
+
+}
+
+.left-panel p{
+
+    line-height:1.8;
+    font-size:16px;
+
+}
+
+/* ===========================
+   RIGHT PANEL
+=========================== */
+
+.right-panel{
+
+    width:60%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:40px;
+
+}
+
+/* ===========================
+   FORMS
+=========================== */
+
+.form{
+    width:100%;
+    display:none;
+    animation:fade .5s ease;
+}
+
+.form.active{
+    display:flex;
+    flex-direction:column;
+}
+
+.form h2{
+
+    text-align:center;
+    margin-bottom:30px;
+    color:#1d4ed8;
+
+}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.input-group{
+
+    margin-bottom:18px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:500;
+
+}
+
+.input-group input{
+
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+
+}
+
+/* ===========================
+   OPTIONS
+=========================== */
+
+.options{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    font-size:14px;
+
+}
+
+.options a{
+
+    color:#2563eb;
+    text-decoration:none;
+
+}
+
+.options a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.btn{
+
+    width:100%;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+
+}
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ===========================
+   LINK
+=========================== */
+
+.form p{
+
+    text-align:center;
+    margin-top:20px;
+
+}
+
+.form p a{
+
+    color:#2563eb;
+    font-weight:600;
+    text-decoration:none;
+
+}
+
+.form p a:hover{
+
+    text-decoration:underline;
+
+}
+
+/* ===========================
+   ANIMATION
+=========================== */
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.container{
+
+    flex-direction:column;
+    height:auto;
+
+}
+
+.left-panel{
+
+    width:100%;
+    padding:40px;
+
+}
+
+.right-panel{
+
+    width:100%;
+    padding:30px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.left-panel h1{
+
+    font-size:32px;
+
+}
+
+.left-panel h2{
+
+    font-size:24px;
+
+}
+
+.form h2{
+
+    font-size:24px;
+
+}
+
+}

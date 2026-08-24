@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Profile | Property Hub</title>
+
+    <!-- Website Icon -->
+    <link rel="icon" type="image/png" href="default-user.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Property Hub</h2>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="owner-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="my-properties.html">
+                    <i class="fa-solid fa-building"></i>
+                    My Properties
+                </a>
+            </li>
+
+            <li>
+                <a href="add-property.html">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Property
+                </a>
+            </li>
+
+            <li>
+                <a href="bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Bookings
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>Owner Profile</h1>
+
+        </header>
+
+        <div class="profile-card">
+
+            <!-- Profile Image -->
+
+            <div class="profile-image">
+
+                <img
+    id="previewImage"
+    src="default-user.png"
+    alt="Owner Image">
+
+                <input
+                    type="file"
+                    id="profileImage"
+                    accept="image/*">
+
+            </div>
+                        <!-- ================= Profile Form ================= -->
+
+            <form id="profileForm">
+
+                <div class="row">
+
+                    <div class="input-group">
+
+                        <label for="name">
+                            <i class="fa-solid fa-user"></i>
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter Full Name"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            <i class="fa-solid fa-envelope"></i>
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter Email Address"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="input-group">
+
+                        <label for="mobile">
+                            <i class="fa-solid fa-phone"></i>
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="mobile"
+                            placeholder="Enter Mobile Number"
+                            maxlength="10">
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="address">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Address
+                        </label>
+
+                        <input
+                            type="text"
+                            id="address"
+                            placeholder="Enter Address">
+
+                    </div>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label for="about">
+                        <i class="fa-solid fa-circle-info"></i>
+                        About Yourself
+                    </label>
+
+                    <textarea
+                        id="about"
+                        rows="6"
+                        placeholder="Tell customers something about yourself..."></textarea>
+
+                </div>
+
+                <div class="row">
+
+                    <button type="submit" class="save-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Profile
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="reset-btn"
+                        onclick="resetProfile()">
+
+                        <i class="fa-solid fa-rotate-left"></i>
+
+                        Reset Profile
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+                <!-- ================= Footer ================= -->
+
+        <footer class="profile-footer">
+
+            <p>
+
+                © 2026 Property Hub | Owner Profile
+
+            </p>
+
+        </footer>
+
+    </main>
+
+    <!-- ================= JavaScript ================= -->
+
+    <script src="profile.js"></script>
+
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

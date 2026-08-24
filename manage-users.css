@@ -1,0 +1,229 @@
+/* ==========================================
+   Property Hub System
+   Manage Users CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f4f6f9;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#1f2937;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo h2{
+    margin-bottom:5px;
+}
+
+.logo p{
+    font-size:14px;
+    color:#d1d5db;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 0;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#fff;
+    padding:14px 20px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+    background:#2563eb;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:30px;
+}
+
+/* Topbar */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.topbar h1{
+    color:#1f2937;
+}
+
+/* Search */
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:280px;
+    padding:10px 40px 10px 15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+.search-box i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#777;
+}
+
+/* Table */
+
+.table-section{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+tbody tr:hover{
+    background:#f9fafb;
+}
+
+/* Buttons */
+
+button{
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    color:#fff;
+    cursor:pointer;
+    margin:2px;
+    transition:.3s;
+}
+
+.edit-btn{
+    background:#10b981;
+}
+
+.delete-btn{
+    background:#ef4444;
+}
+
+.view-btn{
+    background:#2563eb;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+/* Status */
+
+.active-user{
+    color:#10b981;
+    font-weight:bold;
+}
+
+.inactive-user{
+    color:#ef4444;
+    font-weight:bold;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    width:calc(100% - 220px);
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+    width:100%;
+    padding:15px;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.search-box input{
+    width:100%;
+}
+
+.table-section{
+    overflow-x:auto;
+}
+
+table{
+    min-width:800px;
+}
+
+}

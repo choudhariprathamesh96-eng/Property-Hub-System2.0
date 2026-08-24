@@ -1,0 +1,227 @@
+/* ==========================================
+   Property Hub System
+   Admin Bookings CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#1f2937;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    padding:25px 15px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo h2{
+    margin-bottom:5px;
+}
+
+.logo p{
+    font-size:14px;
+    color:#d1d5db;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 0;
+}
+
+.sidebar ul li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#fff;
+    text-decoration:none;
+    padding:14px 20px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a{
+    background:#2563eb;
+}
+
+/* Main Content */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:30px;
+}
+
+/* Topbar */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    color:#1f2937;
+}
+
+.search-box{
+    position:relative;
+}
+
+.search-box input{
+    width:280px;
+    padding:10px 40px 10px 15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+}
+
+.search-box i{
+    position:absolute;
+    right:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#666;
+}
+
+/* Table */
+
+.table-section{
+    background:#fff;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+tbody tr:hover{
+    background:#f5f7fb;
+}
+
+/* Status */
+
+.pending{
+    color:#f59e0b;
+    font-weight:bold;
+}
+
+.approved{
+    color:#10b981;
+    font-weight:bold;
+}
+
+.rejected{
+    color:#ef4444;
+    font-weight:bold;
+}
+
+/* Buttons */
+
+button{
+    border:none;
+    padding:8px 12px;
+    margin:2px;
+    border-radius:5px;
+    cursor:pointer;
+    color:#fff;
+}
+
+.approve-btn{
+    background:#10b981;
+}
+
+.reject-btn{
+    background:#ef4444;
+}
+
+.delete-btn{
+    background:#6b7280;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    width:calc(100% - 220px);
+}
+
+.search-box input{
+    width:200px;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+    width:100%;
+    padding:15px;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+.table-section{
+    overflow-x:auto;
+}
+
+}

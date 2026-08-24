@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Property Location | Property Hub</title>
+
+<link rel="stylesheet" href="location.css">
+<link rel="stylesheet" href="theme.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Property Hub</h1>
+
+</header>
+
+<section class="location-container">
+
+    <div class="property-info">
+
+        <img
+            id="propertyImage"
+            src="apartment1.jpg"
+            alt="Property">
+
+        <h2 id="propertyTitle"></h2>
+
+        <p id="propertyAddress"></p>
+
+        <div class="details">
+
+            <p><strong>Price :</strong> <span id="propertyPrice"></span></p>
+
+            <p><strong>Bedrooms :</strong> <span id="propertyBedrooms"></span></p>
+
+            <p><strong>Bathrooms :</strong> <span id="propertyBathrooms"></span></p>
+
+            <p><strong>Area :</strong> <span id="propertyArea"></span></p>
+
+        </div>
+
+    </div>
+
+    <div class="map">
+
+        <iframe
+            id="mapFrame"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</section>
+
+<script src="location.js"></script>
+<script src="dark-mode.js"></script>
+
+</body>
+
+</html>

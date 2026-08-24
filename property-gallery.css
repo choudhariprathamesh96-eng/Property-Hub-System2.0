@@ -1,0 +1,471 @@
+/* ==========================================
+   Property Hub System
+   Property Gallery CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    background:#0d6efd;
+    color:white;
+
+    padding:18px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.header h1{
+
+    font-size:30px;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    background:white;
+
+    color:#0d6efd;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#e8f1ff;
+
+}
+
+/* ================= GALLERY ================= */
+
+.gallery-container{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:40px auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:35px;
+
+}
+
+/* ================= LEFT ================= */
+
+.gallery-left{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    position:relative;
+
+}
+
+.main-image{
+
+    width:100%;
+
+    height:520px;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+}
+
+.main-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+.main-image img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ================= SLIDER BUTTONS ================= */
+
+.prev,
+.next{
+
+    position:absolute;
+
+    top:45%;
+
+    transform:translateY(-50%);
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#0d6efd;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.prev{
+
+    left:25px;
+
+}
+
+.next{
+
+    right:25px;
+
+}
+
+.prev:hover,
+.next:hover{
+
+    background:#084298;
+
+}
+
+/* ================= THUMBNAILS ================= */
+
+.thumbnails{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:20px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.thumbnail{
+
+    width:90px;
+
+    height:70px;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border:3px solid transparent;
+
+    transition:.3s;
+
+}
+
+.thumbnail img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.thumbnail.active{
+
+    border-color:#0d6efd;
+
+}
+
+.thumbnail:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* ================= RIGHT ================= */
+
+.gallery-right{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.gallery-right h2{
+
+    color:#0d6efd;
+
+    font-size:30px;
+
+}
+
+.gallery-right h3{
+
+    margin:15px 0;
+
+    color:#198754;
+
+    font-size:28px;
+
+}
+
+.gallery-right p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+
+    margin:30px 0;
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.features div{
+
+    background:#f8fbff;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.features i{
+
+    color:#0d6efd;
+
+    font-size:24px;
+
+}
+
+/* ================= BUTTONS ================= */
+
+.action-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.action-buttons button{
+
+    flex:1;
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+#wishlistBtn{
+
+    background:#dc3545;
+
+    color:white;
+
+}
+
+#wishlistBtn:hover{
+
+    background:#bb2d3b;
+
+}
+
+#shareBtn{
+
+    background:#198754;
+
+    color:white;
+
+}
+
+#shareBtn:hover{
+
+    background:#157347;
+
+}
+
+/* ================= LIGHTBOX ================= */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.lightbox img{
+
+    width:85%;
+
+    max-width:1000px;
+
+    border-radius:12px;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:25px;
+
+    right:35px;
+
+    font-size:45px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+.gallery-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.main-image{
+
+    height:420px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.header{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.header h1{
+
+    font-size:24px;
+
+}
+
+.main-image{
+
+    height:300px;
+
+}
+
+.action-buttons{
+
+    flex-direction:column;
+
+}
+
+.thumbnail{
+
+    width:75px;
+
+    height:60px;
+
+}
+
+}

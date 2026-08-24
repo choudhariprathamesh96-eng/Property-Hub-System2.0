@@ -1,0 +1,224 @@
+/* ==========================================
+   PROPERTY HUB
+   CONTACT OWNER
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#eef4ff,#dfeeff);
+    min-height:100vh;
+}
+
+/* Container */
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* Contact Box */
+
+.contact-box{
+
+    width:100%;
+    max-width:750px;
+
+    background:#ffffff;
+
+    padding:40px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+    animation:fadeIn .8s ease;
+
+}
+
+/* Heading */
+
+.contact-box h1{
+
+    text-align:center;
+
+    color:#0d6efd;
+
+    margin-bottom:35px;
+
+    font-size:32px;
+
+}
+
+.contact-box h1 i{
+
+    margin-right:10px;
+
+}
+
+/* Form */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/* Input Group */
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#333;
+
+}
+
+/* Inputs */
+
+.input-group input,
+.input-group textarea{
+
+    padding:14px 15px;
+
+    border:1px solid #d6d6d6;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#fafafa;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 10px rgba(13,110,253,.2);
+
+    background:#fff;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* Button */
+
+button{
+
+    margin-top:10px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#0d6efd,#0056d6);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 20px rgba(13,110,253,.3);
+
+}
+
+/* Placeholder */
+
+::placeholder{
+
+    color:#999;
+
+}
+
+/* Animation */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    .contact-box{
+
+        padding:25px;
+
+    }
+
+    .contact-box h1{
+
+        font-size:26px;
+
+    }
+
+    button{
+
+        font-size:16px;
+
+    }
+
+}

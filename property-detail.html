@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Property Details | Property Hub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>Property Hub</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="my-properties.html?type=buy">
+                        Buy
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-properties.html?type=rent">
+                        Rent
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-properties.html?type=commercial">
+                        Commercial
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="faq.html">FAQ</a>
+                </li>
+
+                <li>
+                    <a href="contact-owner.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <div class="nav-buttons">
+
+                <a href="login.html">
+                    <button class="login-btn">
+                        Login
+                    </button>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= PROPERTY DETAILS ================= -->
+
+    <section class="property-details">
+
+        <div class="details-container">
+
+            <!-- LEFT SIDE IMAGE -->
+
+            <div class="left-side">
+
+                <div class="main-image">
+
+                    <span id="propertyStatus" class="property-status">
+                        For Rent
+                    </span>
+
+                    <img
+                        id="propertyImage"
+                        src="apartment1.png"
+                        alt="Property Image"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE DETAILS -->
+
+            <div class="right-side">
+
+                <div class="verified-badge">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Verified Property
+
+                </div>
+
+
+                <h1 id="propertyTitle">
+                    Luxury Apartment
+                </h1>
+
+
+                <h2 id="propertyPrice">
+                    ₹25,000 / Month
+                </h2>
+
+
+                <p class="location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span id="propertyLocation">
+                        Pune, Maharashtra
+                    </span>
+
+                </p>
+
+
+                <!-- PROPERTY INFORMATION -->
+
+                <div class="property-info-box">
+
+                    <!-- Bedrooms -->
+
+                    <div>
+
+                        <i class="fa-solid fa-bed"></i>
+
+                        <h4>
+                            Bedrooms
+                        </h4>
+
+                        <p id="bedrooms">
+                            3 BHK
+                        </p>
+
+                    </div>
+
+
+                    <!-- Bathrooms -->
+
+                    <div>
+
+                        <i class="fa-solid fa-bath"></i>
+
+                        <h4>
+                            Bathrooms
+                        </h4>
+
+                        <p id="bathrooms">
+                            2
+                        </p>
+
+                    </div>
+
+
+                    <!-- Area -->
+
+                    <div>
+
+                        <i class="fa-solid fa-ruler-combined"></i>
+
+                        <h4>
+                            Area
+                        </h4>
+
+                        <p id="area">
+                            1450 Sq.ft
+                        </p>
+
+                    </div>
+
+
+                    <!-- Parking -->
+
+                    <div>
+
+                        <i class="fa-solid fa-car"></i>
+
+                        <h4>
+                            Parking
+                        </h4>
+
+                        <p id="parking">
+                            Available
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RATING -->
+
+                <div class="property-rating">
+
+                    <span>
+                        ★★★★★
+                    </span>
+
+                    <strong id="propertyRating">
+                        4.9
+                    </strong>
+
+                    <small>
+                        Excellent
+                    </small>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="buttons">
+
+                    <a
+                        href="contact-owner.html"
+                        class="contact-btn"
+                    >
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Contact Owner
+
+                    </a>
+
+
+                    <a
+                        href="#"
+                        class="visit-btn"
+                        onclick="bookVisit(event)"
+                    >
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Book Site Visit
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DESCRIPTION ================= -->
+
+    <section class="description">
+
+        <h2>
+            Property Description
+        </h2>
+
+        <p id="propertyDescription">
+
+            Beautiful and modern property located in a prime location.
+            The property offers comfortable living space, modern
+            facilities, excellent connectivity and a secure environment.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================= AMENITIES ================= -->
+
+    <section class="amenities">
+
+        <h2>
+            Property Amenities
+        </h2>
+
+        <div class="amenities-container">
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-dumbbell"></i>
+
+                <h3>
+                    Gym
+                </h3>
+
+            </div>
+
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-person-swimming"></i>
+
+                <h3>
+                    Swimming Pool
+                </h3>
+
+            </div>
+
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <h3>
+                    24×7 Security
+                </h3>
+
+            </div>
+
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-square-parking"></i>
+
+                <h3>
+                    Parking
+                </h3>
+
+            </div>
+
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-elevator"></i>
+
+                <h3>
+                    Lift
+                </h3>
+
+            </div>
+
+
+            <div class="amenity-card">
+
+                <i class="fa-solid fa-tree"></i>
+
+                <h3>
+                    Garden
+                </h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROPERTY GALLERY ================= -->
+
+   <!-- ================= PROPERTY GALLERY ================= -->
+
+<section class="gallery">
+
+    <h2>Property Gallery</h2>
+
+    <div class="gallery-container">
+
+        <img
+            id="galleryImage1"
+            src="apartment1.png"
+            alt="Property Image 1"
+        >
+
+        <img
+            id="galleryImage2"
+            src="villa.jpg"
+            alt="Property Image 2"
+        >
+
+        <img
+            id="galleryImage3"
+            src="commercial-office.jpg"
+            alt="Property Image 3"
+        >
+
+    </div>
+
+    <div class="gallery-button">
+
+        <a
+            href="property-gallery.html?id=1"
+            class="view-gallery-btn"
+        >
+
+            <i class="fa-solid fa-images"></i>
+
+            View Full Gallery
+
+        </a>
+
+    </div>
+
+</section>
+
+
+    <!-- ================= NEARBY FACILITIES ================= -->
+
+    <section class="nearby">
+
+        <h2>
+            Nearby Facilities
+        </h2>
+
+        <div class="nearby-container">
+
+            <div class="near-card">
+                🏫 School - 1 km
+            </div>
+
+            <div class="near-card">
+                🏥 Hospital - 2 km
+            </div>
+
+            <div class="near-card">
+                🛍 Shopping Mall - 3 km
+            </div>
+
+            <div class="near-card">
+                🚉 Metro Station - 2.5 km
+            </div>
+
+            <div class="near-card">
+                🍽 Restaurants - 500 m
+            </div>
+
+            <div class="near-card">
+                🌳 Public Garden - 1 km
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SIMILAR PROPERTIES ================= -->
+
+    <section class="similar-properties">
+
+        <h2>
+            Similar Properties
+        </h2>
+
+        <div class="property-container">
+
+
+            <!-- VILLA -->
+
+            <div class="property-card">
+
+                <img
+                    src="villa.jpg"
+                    alt="Modern Villa"
+                >
+
+                <h3>
+                    Modern Villa
+                </h3>
+
+                <p>
+                    📍 Mumbai
+                </p>
+
+                <p>
+                    ₹50,000 / Month
+                </p>
+
+                <a
+                    href="property-detail.html?id=2"
+                    class="details-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+
+            <!-- COMMERCIAL OFFICE -->
+
+            <div class="property-card">
+
+                <img
+                    src="commercial-office.jpg"
+                    alt="Commercial Office"
+                >
+
+                <h3>
+                    Commercial Office
+                </h3>
+
+                <p>
+                    📍 Bengaluru
+                </p>
+
+                <p>
+                    ₹1,00,000 / Month
+                </p>
+
+                <a
+                    href="property-detail.html?id=3"
+                    class="details-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+   <footer>
+
+    <div class="footer-content">
+
+        <div class="footer-section">
+
+            <h3>Property Hub</h3>
+
+            <p>
+                India's trusted platform to buy, rent and sell
+                residential and commercial properties.
+            </p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="my-properties.html">
+                        Properties
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="faq.html">
+                        FAQ
+                    </a>
+                </li>
+
+                <li>
+                    <a href="privacy-policy.html">
+                        Privacy Policy
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact</h3>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +91 9876543210
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                propertyhub@gmail.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                Pune, Maharashtra
+            </p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Property Hub System | All Rights Reserved.
+    </p>
+
+</footer>
+    <!-- DARK MODE -->
+    <script src="property-detail.js"></script>
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

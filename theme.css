@@ -1,0 +1,230 @@
+/* ==========================================
+   PROPERTY HUB SYSTEM
+   GLOBAL THEME (DARK MODE)
+========================================== */
+
+/* Floating Dark Mode Button */
+
+#darkModeBtn{
+
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:55px;
+    height:55px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#2563EB;
+    color:white;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+#darkModeBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body.dark-mode{
+
+    background:#121212;
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+body.dark-mode header{
+
+    background:#1b1b1b !important;
+
+}
+
+body.dark-mode .navbar{
+
+    background:#1b1b1b;
+
+}
+
+body.dark-mode .logo h2{
+
+    color:#4da3ff;
+
+}
+
+body.dark-mode .nav-links a{
+
+    color:white;
+
+}
+
+body.dark-mode .nav-links a:hover{
+
+    color:#4da3ff;
+
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+body.dark-mode .hero{
+
+    filter:brightness(.9);
+
+}
+
+/* ==========================================
+   SEARCH BOX
+========================================== */
+
+body.dark-mode .search-box{
+
+    background:#222;
+
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+    background:#333;
+    color:white;
+
+    border:1px solid #555;
+
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder{
+
+    color:#bbb;
+
+}
+
+/* ==========================================
+   CARDS
+========================================== */
+
+body.dark-mode .property-card,
+body.dark-mode .feature-box,
+body.dark-mode .category,
+body.dark-mode .contact-box,
+body.dark-mode .review-card,
+body.dark-mode .analytics-card,
+body.dark-mode .dashboard-card,
+body.dark-mode .gallery-right,
+body.dark-mode .gallery-left{
+
+    background:#222 !important;
+    color:white;
+
+}
+
+/* ==========================================
+   TABLES
+========================================== */
+
+body.dark-mode table{
+
+    background:#222;
+    color:white;
+
+}
+
+body.dark-mode table th{
+
+    background:#2563EB;
+    color:white;
+
+}
+
+body.dark-mode table td{
+
+    color:white;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+body.dark-mode button{
+
+    transition:.3s;
+
+}
+
+body.dark-mode .login-btn{
+
+    background:transparent;
+    color:#4da3ff;
+    border:2px solid #4da3ff;
+
+}
+
+body.dark-mode .register-btn{
+
+    background:#2563EB;
+
+}
+
+/* ==========================================
+   LINKS
+========================================== */
+
+body.dark-mode a{
+
+    color:#4da3ff;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+body.dark-mode footer{
+
+    background:#000;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+body.dark-mode::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+body.dark-mode::-webkit-scrollbar-track{
+
+    background:#222;
+
+}
+
+body.dark-mode::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+    border-radius:20px;
+
+}

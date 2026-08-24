@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Profile | Property Hub</title>
+
+<link rel="stylesheet" href="admin-profile.css">
+<link rel="stylesheet" href="theme.css"> 
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<h2>Property Hub</h2>
+
+<p>Administrator</p>
+
+</div>
+
+<ul>
+
+<li>
+<a href="admin-dashboard.html">
+<i class="fa-solid fa-chart-line"></i>
+Dashboard
+</a>
+</li>
+
+<li>
+<a href="manage-properties.html">
+<i class="fa-solid fa-building"></i>
+Manage Properties
+</a>
+</li>
+
+<li>
+<a href="manage-users.html">
+<i class="fa-solid fa-users"></i>
+Manage Users
+</a>
+</li>
+
+<li>
+<a href="manage-bookings.html">
+<i class="fa-solid fa-calendar-check"></i>
+Manage Bookings
+</a>
+</li>
+
+<li>
+<a href="manage-enquries.html">
+<i class="fa-solid fa-envelope"></i>
+Enquiries
+</a>
+</li>
+
+<li class="active">
+<a href="admin-profile.html">
+<i class="fa-solid fa-user"></i>
+Profile
+</a>
+</li>
+
+<li>
+<a href="login.html">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</a>
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<h1>Admin Profile</h1>
+
+</header>
+
+<div class="table-section">
+
+<div style="text-align:center;">
+
+<img src="default-user.png"
+style="width:150px;height:150px;border-radius:50%;object-fit:cover;">
+
+<h2 style="margin-top:15px;">Administrator</h2>
+
+<p>Property Hub System</p>
+
+</div>
+
+<br>
+
+<form id="adminProfileForm">
+
+<label>Full Name</label>
+
+<input type="text"
+id="adminName"
+value="Administrator">
+
+<br><br>
+
+<label>Email</label>
+
+<input type="email"
+id="adminEmail"
+value="admin@propertyhub.com">
+
+<br><br>
+
+<label>Mobile</label>
+
+<input type="text"
+id="adminPhone"
+value="9876543210">
+
+<br><br>
+
+<label>Change Password</label>
+
+<input type="password"
+id="adminPassword"
+placeholder="New Password">
+
+<br><br>
+
+<button type="submit" class="save-btn">
+    <i class="fa-solid fa-floppy-disk"></i>
+    Save Changes
+</button>
+
+</form>
+
+</div>
+
+</main>
+
+<script src="admin-profile.js"></script>
+<script src="dark-mode.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,333 @@
+/* =====================================
+   GOOGLE FONT
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fa;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+
+/* =====================================
+   MAIN CONTAINER
+===================================== */
+
+.error-container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:60px;
+
+}
+
+/* =====================================
+   IMAGE
+===================================== */
+
+.error-image{
+
+    flex:1;
+
+    text-align:center;
+
+}
+
+.error-image img{
+
+    width:100%;
+
+    max-width:500px;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.error-content{
+
+    flex:1;
+
+}
+
+.error-content h1{
+
+    font-size:140px;
+
+    color:#2563EB;
+
+    line-height:1;
+
+    font-weight:700;
+
+}
+
+.error-content h2{
+
+    font-size:42px;
+
+    color:#1E3A8A;
+
+    margin:20px 0;
+
+}
+
+.error-content p{
+
+    font-size:18px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+/* =====================================
+   BUTTONS
+===================================== */
+
+.buttons{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.buttons a{
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.home-btn{
+
+    background:#2563EB;
+
+    color:#fff;
+
+}
+
+.home-btn:hover{
+
+    background:#1E3A8A;
+
+    transform:translateY(-3px);
+
+}
+
+.property-btn{
+
+    background:#ffffff;
+
+    color:#2563EB;
+
+    border:2px solid #2563EB;
+
+}
+
+.property-btn:hover{
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    transform:translateY(-3px);
+
+}
+
+/* =====================================
+   DARK MODE BUTTON
+===================================== */
+
+#darkModeBtn{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:999;
+
+}
+
+#darkModeBtn:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* =====================================
+   FLOAT ANIMATION
+===================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:900px){
+
+    .error-container{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:40px 20px;
+
+    }
+
+    .error-image img{
+
+        max-width:320px;
+
+    }
+
+    .error-content h1{
+
+        font-size:100px;
+
+    }
+
+    .error-content h2{
+
+        font-size:32px;
+
+    }
+
+    .error-content p{
+
+        font-size:16px;
+
+    }
+
+    .buttons{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:500px){
+
+    .error-content h1{
+
+        font-size:80px;
+
+    }
+
+    .error-content h2{
+
+        font-size:26px;
+
+    }
+
+    .buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .buttons a{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

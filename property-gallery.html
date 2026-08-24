@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Property Gallery | Property Hub</title>
+
+    <link rel="stylesheet" href="property-gallery.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <h1>
+            <i class="fa-solid fa-house"></i>
+            Property Gallery
+        </h1>
+
+        <a href="property-detail.html" class="back-btn">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </header>
+
+    <!-- Gallery -->
+
+    <section class="gallery-container">
+
+        <!-- Left -->
+
+        <div class="gallery-left">
+
+            <div class="main-image">
+
+                <img
+                    id="mainImage"
+                    src="apartment1.png"
+                    alt="Property">
+
+            </div>
+
+            <button class="prev" onclick="previousImage()">
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </button>
+
+            <button class="next" onclick="nextImage()">
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </button>
+
+            <!-- Thumbnails -->
+
+            <div
+                class="thumbnails"
+                id="thumbnailContainer">
+
+            </div>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="gallery-right">
+
+            <h2 id="propertyTitle">
+
+                Luxury Apartment
+
+            </h2>
+
+            <h3 id="propertyPrice">
+
+                ₹25,000 / Month
+
+            </h3>
+
+            <p id="propertyLocation">
+
+                Pune, Maharashtra
+
+            </p>
+
+            <div class="features">
+
+                <div>
+
+                    <i class="fa-solid fa-bed"></i>
+
+                    <span id="bedrooms">
+
+                        3 Bedrooms
+
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-bath"></i>
+
+                    <span id="bathrooms">
+
+                        2 Bathrooms
+
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-ruler-combined"></i>
+
+                    <span id="area">
+
+                        1450 Sq.ft
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p class="description">
+
+                Experience modern living with spacious rooms,
+                premium interiors, natural lighting,
+                dedicated parking, 24×7 security,
+                and excellent connectivity.
+
+            </p>
+
+            <div class="action-buttons">
+
+                <button id="wishlistBtn">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    Add to Wishlist
+
+                </button>
+
+                <button id="shareBtn">
+
+                    <i class="fa-solid fa-share-nodes"></i>
+
+                    Share
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Fullscreen Preview -->
+
+    <div
+        class="lightbox"
+        id="lightbox">
+
+        <span
+            class="close"
+            onclick="closePreview()">
+
+            &times;
+
+        </span>
+
+        <img
+            id="previewImage">
+
+    </div>
+
+    <script src="property-gallery.js"></script>
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

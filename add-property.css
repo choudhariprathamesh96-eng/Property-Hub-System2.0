@@ -1,0 +1,151 @@
+/* ==========================
+   Google Font
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0d6efd,#5aa3ff);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+/* ==========================
+   Form Container
+========================== */
+
+.container{
+    width:100%;
+    max-width:900px;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.container h1{
+    text-align:center;
+    color:#0d6efd;
+    margin-bottom:35px;
+    font-size:36px;
+}
+
+.container h1 i{
+    margin-right:10px;
+}
+
+/* ==========================
+   Form
+========================== */
+
+form{
+    width:100%;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:20px;
+}
+
+.input-group label{
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    outline:none;
+    font-size:16px;
+    transition:.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 10px rgba(13,110,253,.25);
+}
+
+/* ==========================
+   Two Column Layout
+========================== */
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* ==========================
+   File Upload
+========================== */
+
+input[type=file]{
+    border:2px dashed #0d6efd;
+    padding:18px;
+    background:#f8fbff;
+    cursor:pointer;
+}
+
+/* ==========================
+   Submit Button
+========================== */
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    background:#0d6efd;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#084298;
+    transform:translateY(-3px);
+}
+
+button i{
+    margin-right:10px;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+    .container{
+        padding:25px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+    }
+
+    .container h1{
+        font-size:28px;
+    }
+
+}

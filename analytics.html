@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard | Property Hub</title>
+
+    <link rel="stylesheet" href="analytics.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <h2>Property Hub</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="analytics.html" class="active">Analytics</a>
+            <a href="manage-properties.html">Properties</a>
+            <a href="manage-users.html">Users</a>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= TITLE ================= -->
+
+    <section class="page-title">
+
+        <h1>
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            Analytics Dashboard
+
+        </h1>
+
+        <p>
+
+            Monitor the performance of your Property Hub System.
+
+        </p>
+
+    </section>
+
+    <!-- ================= CARDS ================= -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-building"></i>
+
+            <h2 id="totalProperties">0</h2>
+
+            <p>Total Properties</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2 id="totalUsers">0</h2>
+
+            <p>Total Users</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            <h2 id="totalBookings">0</h2>
+
+            <p>Total Bookings</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            <h2 id="totalRevenue">₹0</h2>
+
+            <p>Total Revenue</p>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CHARTS ================= -->
+
+    <section class="charts">
+
+        <div class="chart-card">
+
+            <h3>Monthly Property Views</h3>
+
+            <canvas id="viewsChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>Bookings Per Month</h3>
+
+            <canvas id="bookingChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>Property Types</h3>
+
+            <canvas id="propertyTypeChart"></canvas>
+
+        </div>
+
+        <div class="chart-card">
+
+            <h3>Revenue Growth</h3>
+
+            <canvas id="revenueChart"></canvas>
+
+        </div>
+
+    </section>
+
+    <!-- ================= REPORT TABLE ================= -->
+
+    <section class="report-table">
+
+        <h2>System Summary</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Module</th>
+
+                    <th>Status</th>
+
+                    <th>Records</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>Properties</td>
+
+                    <td>Active</td>
+
+                    <td id="propertyRecords">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Bookings</td>
+
+                    <td>Running</td>
+
+                    <td id="bookingRecords">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Users</td>
+
+                    <td>Registered</td>
+
+                    <td id="userRecords">0</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Reviews</td>
+
+                    <td>Published</td>
+
+                    <td id="reviewRecords">0</td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Property Hub System | Analytics Dashboard
+
+        </p>
+
+    </footer>
+
+    <script src="analytics.js"></script>
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

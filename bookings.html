@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bookings | Property Hub</title>
+
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="theme.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+    <div class="logo">
+        <h2>Property Hub</h2>
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="owner-dashboard.html">
+                <i class="fa-solid fa-chart-line"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="my-properties.html">
+                <i class="fa-solid fa-building"></i>
+                My Properties
+            </a>
+        </li>
+
+        <li>
+            <a href="add-property.html">
+                <i class="fa-solid fa-plus"></i>
+                Add Property
+            </a>
+        </li>
+
+        <li class="active">
+            <a href="bookings.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Bookings
+            </a>
+        </li>
+
+        <li>
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+        </li>
+
+        <li>
+            <a href="login.html">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </li>
+
+    </ul>
+
+</aside>
+
+<!-- ================= Main ================= -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<h1>Bookings & Enquiries</h1>
+
+<div class="owner">
+
+<i class="fa-solid fa-user-circle"></i>
+
+Welcome,
+<strong>Prathamesh</strong>
+
+</div>
+
+</header>
+
+<section class="recent">
+
+<h2>Customer Booking Requests</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Customer</th>
+
+<th>Phone</th>
+
+<th>Email</th>
+
+<th>Property</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="bookingTable">
+
+</tbody>
+
+</table>
+
+</section>
+
+</main>
+
+<script src="bookings.js"></script>
+<script src="dark-mode.js"></script>
+</body>
+
+</html>

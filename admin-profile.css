@@ -1,0 +1,308 @@
+/* ==========================================
+   Property Hub System
+   Admin Profile CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    display:flex;
+}
+
+/* ================= Sidebar ================= */
+
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:#0d6efd;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    padding:25px 0;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    font-size:26px;
+}
+
+.logo p{
+    margin-top:5px;
+    font-size:14px;
+    opacity:.8;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    padding:14px 18px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar ul li a i{
+    margin-right:12px;
+    width:25px;
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.active a{
+    background:#ffffff;
+    color:#0d6efd;
+}
+
+/* ================= Main ================= */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:35px;
+}
+
+/* ================= Topbar ================= */
+
+.topbar{
+    background:#fff;
+    padding:20px 30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.topbar h1{
+    color:#0d6efd;
+}
+
+/* ================= Profile Card ================= */
+
+.profile-card{
+
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.profile-image{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.profile-image img{
+
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    border:5px solid #0d6efd;
+    object-fit:cover;
+
+}
+
+.profile-image h2{
+
+    margin-top:15px;
+    color:#333;
+
+}
+
+.profile-image p{
+
+    color:#777;
+    font-size:15px;
+
+}
+
+/* ================= Form ================= */
+
+form{
+
+    margin-top:20px;
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+
+}
+
+.input-group input{
+
+    width:100%;
+    padding:13px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+.input-group input:focus{
+
+    outline:none;
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,.3);
+
+}
+
+/* ================= Button ================= */
+
+.save-btn{
+
+    width:100%;
+    padding:15px;
+    background:#0d6efd;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+.save-btn:hover{
+
+    background:#084298;
+
+}
+
+/* ================= Statistics ================= */
+
+.stats{
+
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+
+}
+
+.stat-box{
+
+    background:#f8f9fa;
+    padding:20px;
+    border-radius:10px;
+    text-align:center;
+    transition:.3s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.stat-box i{
+
+    font-size:30px;
+    color:#0d6efd;
+    margin-bottom:10px;
+
+}
+
+.stat-box h3{
+
+    font-size:28px;
+    color:#333;
+
+}
+
+.stat-box p{
+
+    color:#777;
+
+}
+
+/* ================= Responsive ================= */
+
+@media(max-width:900px){
+
+.sidebar{
+
+    width:220px;
+
+}
+
+.main-content{
+
+    margin-left:220px;
+    width:calc(100% - 220px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+    display:block;
+
+}
+
+.sidebar{
+
+    position:relative;
+    width:100%;
+    min-height:auto;
+
+}
+
+.main-content{
+
+    width:100%;
+    margin-left:0;
+    padding:20px;
+
+}
+
+.profile-card{
+
+    padding:25px;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+}

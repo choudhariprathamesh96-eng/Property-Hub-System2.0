@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Property | Property Hub</title>
+
+<link rel="stylesheet" href="add-property.css">
+<link rel="stylesheet" href="theme.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+<i class="fa-solid fa-house-circle-check"></i>
+Add New Property
+</h1>
+
+<form id="propertyForm">
+
+<!-- Property Title -->
+
+<div class="input-group">
+<label>Property Title</label>
+<input type="text" id="title" placeholder="Luxury Apartment" required>
+</div>
+
+<!-- Description -->
+
+<div class="input-group">
+<label>Description</label>
+<textarea id="description" rows="5" required></textarea>
+</div>
+
+<!-- Price & City -->
+
+<div class="row">
+
+<div class="input-group">
+<label>Price (₹)</label>
+<input type="number" id="price" required>
+</div>
+
+<div class="input-group">
+<label>City</label>
+<input type="text" id="city" required>
+</div>
+
+</div>
+
+<!-- State & Address -->
+
+<div class="row">
+
+<div class="input-group">
+<label>State</label>
+<input type="text" id="state" placeholder="Maharashtra">
+</div>
+
+<div class="input-group">
+<label>Full Address</label>
+<input type="text" id="address">
+</div>
+
+</div>
+
+<!-- Property Type -->
+
+<div class="row">
+
+<div class="input-group">
+
+<label>Property Type</label>
+
+<select id="type">
+
+<option>Apartment</option>
+<option>Villa</option>
+<option>Independent House</option>
+<option>Office</option>
+<option>Shop</option>
+<option>PG</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Property Status</label>
+
+<select id="status">
+
+<option>For Rent</option>
+<option>For Sale</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- Area -->
+
+<div class="row">
+
+<div class="input-group">
+<label>Area (Sq.ft)</label>
+<input type="number" id="area">
+</div>
+
+<div class="input-group">
+<label>Floor</label>
+<input type="number" id="floor">
+</div>
+
+</div>
+
+<!-- Bedrooms -->
+
+<div class="row">
+
+<div class="input-group">
+<label>Bedrooms</label>
+<input type="number" id="bedrooms">
+</div>
+
+<div class="input-group">
+<label>Bathrooms</label>
+<input type="number" id="bathrooms">
+</div>
+
+</div>
+
+<!-- Parking -->
+
+<div class="row">
+
+<div class="input-group">
+
+<label>Parking</label>
+
+<select id="parking">
+
+<option>Available</option>
+<option>Not Available</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Furnished</label>
+
+<select id="furnished">
+
+<option>Fully Furnished</option>
+<option>Semi Furnished</option>
+<option>Unfurnished</option>
+
+</select>
+
+</div>
+
+</div>
+
+<!-- Owner -->
+
+<div class="row">
+
+<div class="input-group">
+<label>Owner Name</label>
+<input type="text" id="owner">
+</div>
+
+<div class="input-group">
+<label>Mobile Number</label>
+<input type="tel" id="mobile">
+</div>
+
+</div>
+
+<!-- Upload -->
+
+<div class="input-group">
+
+<label>Property Image</label>
+
+<input type="file"
+id="image"
+accept="image/*">
+
+</div>
+
+<!-- Preview -->
+
+<div class="preview">
+
+<img id="previewImage" src="" alt="">
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Property
+
+</button>
+
+</form>
+
+</div>
+
+<script src="add-property.js"></script>
+<script src="dark-mode.js"></script>
+</body>
+
+</html>

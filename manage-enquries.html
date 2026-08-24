@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Enquiries | Property Hub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Property Hub</h2>
+            <p>Administrator</p>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-properties.html">
+                    <i class="fa-solid fa-building"></i>
+                    Manage Properties
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-users.html">
+                    <i class="fa-solid fa-users"></i>
+                    Manage Users
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Manage Bookings
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="manage-enquries.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    Enquiries
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>    
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Manage Enquiries</h1>
+
+                <p>Customer Enquiries</p>
+
+            </div>
+
+        </header>
+
+        <section class="table-section">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Property</th>
+                        <th>Visit Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="enquiryTable">
+
+                    <!-- JavaScript will load enquiries here -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+
+    <script src="manage-enquries.js"></script>
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

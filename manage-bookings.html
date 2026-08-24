@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Bookings | Property Hub</title>
+
+    <link rel="stylesheet" href="manage-bookings.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Property Hub</h2>
+            <p>Administrator</p>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-properties.html">
+                    <i class="fa-solid fa-building"></i>
+                    Manage Properties
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-users.html">
+                    <i class="fa-solid fa-users"></i>
+                    Manage Users
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="manage-bookings.html">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Manage Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-enquries.html">
+                    <i class="fa-solid fa-envelope"></i>
+                    Enquiries
+                </a>
+            </li>
+
+            <li>
+                <a href="admin-profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h1>Manage Bookings</h1>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchBooking"
+                    placeholder="Search Booking...">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+        </header>
+
+        <section class="table-section">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Customer</th>
+
+                        <th>Property</th>
+
+                        <th>Booking Date</th>
+
+                        <th>Visit Date</th>
+
+                        <th>Status</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="bookingTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="manage-bookings.js"></script>
+    <script src="dark-mode.js"></script>
+
+</body>
+
+</html>

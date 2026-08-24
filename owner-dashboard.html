@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Owner Dashboard | Property Hub</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="theme.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Property Hub</h2>
+        </div>
+
+        <!-- Owner Profile -->
+
+        <div class="owner-profile">
+
+            <img src="profile.png"
+                 alt="Owner">
+
+            <h3 id="sidebarUserName">User</h3>
+
+            <p>Premium Property Owner</p>
+
+        </div>
+
+        <ul>
+
+            <!-- Dashboard -->
+            <li class="active">
+
+                <a href="owner-dashboard.html">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <!-- My Properties -->
+            <li>
+
+                <a href="my-properties.html">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    My Properties
+
+                </a>
+
+            </li>
+
+            <!-- Add Property -->
+            <li>
+
+                <a href="add-property.html">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add Property
+
+                </a>
+
+            </li>
+
+            <!-- Enquiries -->
+            <li>
+
+                <a href="manage-enquries.html">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Enquiries
+
+                </a>
+
+            </li>
+
+            <!-- Bookings -->
+            <li>
+
+                <a href="bookings.html">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Bookings
+
+                </a>
+
+            </li>
+
+            <!-- Wishlist -->
+            <li>
+
+                <a href="wishlist.html">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    Wishlist
+
+                </a>
+
+            </li>
+
+            <!-- Notifications -->
+            <li>
+
+                <a href="notifications.html">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    Notifications
+
+                </a>
+
+            </li>
+
+            <!-- Profile -->
+            <li>
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <!-- Logout -->
+            <li>
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= TOPBAR ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Owner Dashboard</h1>
+
+                <p id="todayDate"></p>
+
+            </div>
+
+
+            <div class="top-right">
+
+                <button class="notification-btn">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>3</span>
+
+                </button>
+
+
+                <div class="owner">
+
+                    <img src="profile.png"
+                         alt="Owner">
+
+                    <div>
+
+                        <strong id="topUserName">User</strong>
+
+                        <p>Property Owner</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= WELCOME ================= -->
+
+        <section class="dashboard-header">
+
+            <div class="welcome">
+
+                <h2>
+    Welcome Back, <span id="welcomeUserName">User</span> 👋
+</h2>
+
+                <p>
+                    Manage your properties, enquiries,
+                    bookings and profile from one dashboard.
+                </p>
+
+            </div>
+
+
+            <a href="add-property.html"
+               class="add-property-btn">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add New Property
+
+            </a>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+
+        <section class="cards">
+
+
+            <!-- Total Properties -->
+
+            <div class="card blue">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-building"></i>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h2 id="totalProperties">0</h2>
+
+                    <p>Total Properties</p>
+
+                    <small>+2 this month</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Rent -->
+
+            <div class="card green">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h2 id="rentProperties">0</h2>
+
+                    <p>For Rent</p>
+
+                    <small>Active Listings</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Sale -->
+
+            <div class="card orange">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h2 id="saleProperties">0</h2>
+
+                    <p>For Sale</p>
+
+                    <small>Available Now</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Enquiries -->
+
+            <div class="card red">
+
+                <div class="card-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div class="card-info">
+
+                    <h2 id="totalEnquiries">26</h2>
+
+                    <p>Total Enquiries</p>
+
+                    <small>5 New Today</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUICK ACTIONS ================= -->
+
+        <section class="quick-actions">
+
+            <h2>Quick Actions</h2>
+
+
+            <div class="action-grid">
+
+
+                <a href="add-property.html"
+                   class="action-card">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    <span>Add Property</span>
+
+                </a>
+
+
+                <a href="my-properties.html"
+                   class="action-card">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    <span>Manage Properties</span>
+
+                </a>
+
+
+                <a href="manage-enquries.html"
+                   class="action-card">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <span>View Enquiries</span>
+
+                </a>
+
+
+                <a href="profile.html"
+                   class="action-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RECENT ACTIVITY ================= -->
+
+        <section class="activity">
+
+            <h2>Recent Activity</h2>
+
+
+            <div class="activity-list">
+
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-house-circle-check"></i>
+
+                    <div>
+
+                        <h4>Luxury Apartment Added</h4>
+
+                        <p>Today • 10:30 AM</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <div>
+
+                        <h4>Apartment Viewed 42 Times</h4>
+
+                        <p>Today • 01:20 PM</p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="activity-item">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <div>
+
+                        <h4>Property Added to Wishlist</h4>
+
+                        <p>Yesterday</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOTIFICATIONS ================= -->
+
+        <section class="notifications">
+
+            <h2>Latest Notifications</h2>
+
+
+            <div class="notification-box">
+
+                <p>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Property approved successfully.
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    New enquiry received.
+
+                </p>
+
+
+                <p>
+
+                    <i class="fa-solid fa-star"></i>
+
+                    Your property is trending.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY PROPERTIES ================= -->
+
+        <section class="recent">
+
+            <div class="section-header">
+
+                <h2>My Properties</h2>
+
+                <a href="add-property.html"
+                   class="view-all">
+
+                    + Add New
+
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Image</th>
+                        <th>Property</th>
+                        <th>City</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Views</th>
+                        <th>Actions</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="propertyTableBody">
+
+                    <!-- Dynamic Properties -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- ================= RECENT ENQUIRIES ================= -->
+
+        <section class="recent">
+
+            <div class="section-header">
+
+                <h2>Recent Enquiries</h2>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Customer</th>
+                        <th>Property</th>
+                        <th>Phone</th>
+                        <th>Date</th>
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>Rahul Sharma</td>
+
+                        <td>Luxury Apartment</td>
+
+                        <td>+91 9876543210</td>
+
+                        <td>Today</td>
+
+                        <td>
+
+                            <span class="badge pending">
+                                Pending
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Priya Patil</td>
+
+                        <td>Modern Villa</td>
+
+                        <td>+91 9876543211</td>
+
+                        <td>Yesterday</td>
+
+                        <td>
+
+                            <span class="badge completed">
+                                Contacted
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>Amit Joshi</td>
+
+                        <td>Office Space</td>
+
+                        <td>+91 9876543212</td>
+
+                        <td>2 Days Ago</td>
+
+                        <td>
+
+                            <span class="badge pending">
+                                Pending
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- ================= PROPERTY PERFORMANCE ================= -->
+
+        <section class="performance">
+
+            <h2>Property Performance</h2>
+
+
+            <div class="performance-grid">
+
+
+                <div class="performance-card">
+
+                    <i class="fa-solid fa-eye"></i>
+
+                    <h3>1,248</h3>
+
+                    <p>Total Views</p>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <h3>326</h3>
+
+                    <p>Wishlist Saves</p>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h3>82</h3>
+
+                    <p>Customer Calls</p>
+
+                </div>
+
+
+                <div class="performance-card">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <h3>4.9</h3>
+
+                    <p>Owner Rating</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CUSTOMER REVIEWS ================= -->
+
+        <section class="reviews">
+
+            <h2>Recent Reviews</h2>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>Rahul Sharma</strong>
+
+                    <span>★★★★★</span>
+
+                </div>
+
+                <p>
+                    Excellent owner. The property was exactly
+                    as shown in the listing.
+                </p>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>Priya Patil</strong>
+
+                    <span>★★★★☆</span>
+
+                </div>
+
+                <p>
+                    Smooth communication and quick response
+                    from the owner.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+                © 2026 Property Hub | Owner Dashboard
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const todayDate =
+                document.getElementById("todayDate");
+
+            if (todayDate) {
+
+                todayDate.textContent =
+                    new Date().toDateString();
+
+            }
+
+        });
+
+    </script>
+
+
+    <script src="dashboard.js"></script>
+
+    <script src="dark-mode.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,441 @@
+/* ==========================================
+   Property Hub System
+   Reviews & Ratings CSS
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#0d6efd;
+    color:white;
+    padding:18px 8%;
+
+}
+
+.logo h2{
+
+    font-size:28px;
+
+}
+
+nav{
+
+    display:flex;
+    gap:30px;
+
+}
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ffd700;
+
+}
+
+/* ================= PAGE TITLE ================= */
+
+.page-title{
+
+    text-align:center;
+    padding:50px 20px;
+
+}
+
+.page-title h1{
+
+    font-size:40px;
+    color:#0d6efd;
+    margin-bottom:10px;
+
+}
+
+.page-title p{
+
+    font-size:18px;
+    color:#666;
+
+}
+
+/* ================= RATING SUMMARY ================= */
+
+.rating-summary{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    display:flex;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+
+}
+
+.overall-rating{
+
+    flex:1;
+    text-align:center;
+
+}
+
+.overall-rating h2{
+
+    font-size:70px;
+    color:#0d6efd;
+
+}
+
+.stars{
+
+    margin:15px 0;
+
+}
+
+.stars i{
+
+    color:#FFD700;
+    font-size:28px;
+
+}
+
+.overall-rating p{
+
+    color:#666;
+
+}
+
+.rating-bars{
+
+    flex:2;
+
+}
+
+.bar{
+
+    display:flex;
+    align-items:center;
+    margin:15px 0;
+
+}
+
+.bar span{
+
+    width:70px;
+    font-weight:bold;
+
+}
+
+.bar progress{
+
+    width:100%;
+    height:18px;
+
+}
+
+/* ================= REVIEW FORM ================= */
+
+.review-form-section{
+
+    width:90%;
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.review-form-section h2{
+
+    color:#0d6efd;
+    margin-bottom:25px;
+
+}
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+
+}
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:#0d6efd;
+    outline:none;
+    box-shadow:0 0 10px rgba(13,110,253,.2);
+
+}
+
+/* ================= STAR RATING ================= */
+
+.rating-stars{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.rating-stars i{
+
+    font-size:34px;
+    cursor:pointer;
+    color:#ccc;
+    transition:.3s;
+
+}
+
+.rating-stars i:hover{
+
+    color:#FFD700;
+    transform:scale(1.2);
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+    width:100%;
+    padding:16px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    font-size:17px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#084298;
+
+}
+
+/* ================= CUSTOMER REVIEWS ================= */
+
+.customer-reviews{
+
+    width:90%;
+    max-width:1200px;
+    margin:40px auto;
+
+}
+
+.customer-reviews h2{
+
+    color:#0d6efd;
+    margin-bottom:30px;
+
+}
+
+.review-card{
+
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+
+}
+
+.review-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.review-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+
+}
+
+.review-user{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.review-user img{
+
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    object-fit:cover;
+
+}
+
+.review-name{
+
+    font-weight:bold;
+    font-size:18px;
+
+}
+
+.review-date{
+
+    color:#888;
+    font-size:14px;
+
+}
+
+.review-stars{
+
+    color:#FFD700;
+    margin:10px 0;
+
+}
+
+.review-title{
+
+    font-size:22px;
+    color:#0d6efd;
+    margin-bottom:10px;
+
+}
+
+.review-message{
+
+    line-height:1.7;
+    color:#555;
+
+}
+
+/* ================= REVIEW ACTIONS ================= */
+
+.review-actions{
+
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+
+}
+
+.review-actions button{
+
+    width:auto;
+    padding:10px 20px;
+    font-size:15px;
+
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    margin-top:60px;
+    background:#0d6efd;
+    color:white;
+    text-align:center;
+    padding:25px;
+
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:768px){
+
+.header{
+
+    flex-direction:column;
+    gap:20px;
+
+}
+
+nav{
+
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.rating-summary{
+
+    flex-direction:column;
+
+}
+
+.page-title h1{
+
+    font-size:30px;
+
+}
+
+.review-header{
+
+    flex-direction:column;
+    align-items:flex-start;
+
+}
+
+.review-actions{
+
+    flex-direction:column;
+
+}
+
+.review-actions button{
+
+    width:100%;
+
+}
+
+}
