@@ -9,7 +9,7 @@ console.log("Home Page Loaded");
 // API
 // ==========================================
 
-const API_URL = "http://localhost:8080/properties";
+https://property-hub-system2.netlify.app
 
 // ==========================================
 // Load Properties
@@ -90,10 +90,10 @@ function loadProperties() {
                         </button>
 
                         <img
-                            src="../../assets/images/${property.image}"
+                            src="${property.image}"
                             alt="${property.title}"
                             class="property-image"
-                            onerror="this.src='../../assets/images/apartment1.png'">
+                            onerror="this.src='apartment1.png'">
 
                     </div>
 
