@@ -6,15 +6,22 @@
 console.log("Home Page Loaded");
 
 // ==========================================
-// API
+// API CONFIGURATION
 // ==========================================
 
 // IMPORTANT:
-// Put your DEPLOYED Spring Boot backend URL here.
-// Do NOT put your Netlify frontend URL here.
-// Do NOT use localhost for the deployed Netlify website.
+// Replace this with your DEPLOYED Spring Boot backend URL.
+//
+// Example:
+// const API_URL = "https://your-backend.onrender.com/properties";
+//
+// DO NOT use:
+// http://localhost:8080/properties
+//
+// DO NOT use your Netlify frontend URL.
 
-const API_URL = "YOUR_SPRING_BOOT_BACKEND_URL/properties";
+const API_URL = "YOUR_DEPLOYED_BACKEND_URL/properties";
+
 
 // ==========================================
 // Load Properties
@@ -22,8 +29,9 @@ const API_URL = "YOUR_SPRING_BOOT_BACKEND_URL/properties";
 
 function loadProperties() {
 
-    fetch(API_URL)
+    console.log("Loading properties from:", API_URL);
 
+    fetch(API_URL)
         .then(response => {
 
             if (!response.ok) {
@@ -46,15 +54,27 @@ function loadProperties() {
                 document.getElementById("propertyContainer");
 
             if (!container) {
+
                 console.error(
-                    "propertyContainer not found in HTML"
+                    "ERROR: propertyContainer not found in HTML."
                 );
+
                 return;
             }
 
+            // Clear old properties
             container.innerHTML = "";
 
-            if (!properties || properties.length === 0) {
+
+            // ==========================================
+            // No Properties
+            // ==========================================
+
+            if (
+                !properties ||
+                !Array.isArray(properties) ||
+                properties.length === 0
+            ) {
 
                 container.innerHTML = `
                     <div style="
@@ -62,13 +82,19 @@ function loadProperties() {
                         text-align:center;
                         padding:40px;
                     ">
+
                         <h2>No Properties Available</h2>
-                        <p>Please check again later.</p>
+
+                        <p>
+                            Please check again later.
+                        </p>
+
                     </div>
                 `;
 
                 return;
             }
+
 
             // ==========================================
             // Create Property Cards
@@ -81,78 +107,169 @@ function loadProperties() {
 
                 card.className = "property-card";
 
+
+                // ==========================================
+                // Property Values
+                // ==========================================
+
+                const propertyId =
+                    property.id;
+
+                const title =
+                    property.title ||
+                    "Untitled Property";
+
+                const type =
+                    property.type ||
+                    "Property";
+
+                const location =
+                    property.location ||
+                    "Location unavailable";
+
+                const bedrooms =
+                    property.bedrooms || 0;
+
+                const bathrooms =
+                    property.bathrooms || 0;
+
+                const area =
+                    property.area || 0;
+
+                const price =
+                    Number(property.price || 0);
+
+                const image =
+                    property.image ||
+                    "apartment1.png";
+
+
+                // ==========================================
+                // Property Card HTML
+                // ==========================================
+
                 card.innerHTML = `
+
+                    <!-- =================================
+                         PROPERTY IMAGE
+                    ================================== -->
 
                     <div class="property-image-wrapper">
 
                         <span class="property-status">
-                            ${property.type || "Property"}
+                            ${type}
                         </span>
 
+
+                        <!-- Wishlist Button -->
+
                         <button
+                            type="button"
                             class="wishlist-btn"
-                            onclick="addToWishlist(${property.id})"
-                            title="Add to Wishlist">
+                            onclick="addToWishlist(${propertyId})"
+                            title="Add to Wishlist"
+                        >
 
                             <i class="fa-solid fa-heart"></i>
 
                         </button>
 
+
+                        <!-- Property Image -->
+
                         <img
-                            src="${property.image || 'apartment1.png'}"
-                            alt="${property.title || 'Property'}"
+                            src="${image}"
+                            alt="${title}"
                             class="property-image"
-                            onerror="this.src='apartment1.png'">
+                            onerror="this.onerror=null; this.src='apartment1.png';"
+                        >
 
                     </div>
 
+
+                    <!-- =================================
+                         PROPERTY CONTENT
+                    ================================== -->
+
                     <div class="property-content">
 
+
+                        <!-- Property Title -->
+
                         <h3>
-                            ${property.title || "Untitled Property"}
+                            ${title}
                         </h3>
+
+
+                        <!-- Location -->
 
                         <p class="location">
 
                             <i class="fa-solid fa-location-dot"></i>
 
-                            ${property.location || "Location unavailable"}
+                            ${location}
 
                         </p>
+
+
+                        <!-- Property Information -->
 
                         <div class="property-info">
 
                             <span>
+
                                 <i class="fa-solid fa-bed"></i>
-                                ${property.bedrooms || 0} BHK
+
+                                ${bedrooms} BHK
+
                             </span>
 
+
                             <span>
+
                                 <i class="fa-solid fa-bath"></i>
-                                ${property.bathrooms || 0} Bath
+
+                                ${bathrooms} Bath
+
                             </span>
 
+
                             <span>
+
                                 <i class="fa-solid fa-ruler-combined"></i>
-                                ${property.area || 0} Sq.ft
+
+                                ${area} Sq.ft
+
                             </span>
 
                         </div>
 
+
+                        <!-- Price -->
+
                         <h2 class="price">
 
-                            ₹${Number(property.price || 0)
-                                .toLocaleString("en-IN")}
+                            ₹${price.toLocaleString("en-IN")}
 
-                            <span>/ Month</span>
+                            <span>
+                                / Month
+                            </span>
 
                         </h2>
 
+
+                        <!-- Buttons -->
+
                         <div class="property-buttons">
 
+
+                            <!-- View Details -->
+
                             <button
+                                type="button"
                                 class="details-btn"
-                                onclick="viewProperty(${property.id})">
+                                onclick="viewProperty(${propertyId})"
+                            >
 
                                 <i class="fa-solid fa-eye"></i>
 
@@ -162,9 +279,14 @@ function loadProperties() {
 
                         </div>
 
+
+                        <!-- Contact Owner -->
+
                         <button
+                            type="button"
                             class="contact-btn"
-                            onclick="contactOwner(${property.id})">
+                            onclick="contactOwner(${propertyId})"
+                        >
 
                             <i class="fa-solid fa-phone"></i>
 
@@ -175,6 +297,9 @@ function loadProperties() {
                     </div>
 
                 `;
+
+
+                // Add card to container
 
                 container.appendChild(card);
 
@@ -189,8 +314,10 @@ function loadProperties() {
                 error
             );
 
+
             const container =
                 document.getElementById("propertyContainer");
+
 
             if (container) {
 
@@ -211,12 +338,23 @@ function loadProperties() {
                             Property Hub server.
                         </p>
 
+                        <p style="
+                            color:#666;
+                            margin-top:10px;
+                        ">
+                            Please check that the
+                            backend server is running
+                            and the API URL is correct.
+                        </p>
+
                     </div>
 
                 `;
+
             }
 
         });
+
 }
 
 
@@ -226,8 +364,21 @@ function loadProperties() {
 
 function viewProperty(id) {
 
+    if (!id) {
+
+        console.error(
+            "Property ID is missing."
+        );
+
+        return;
+    }
+
+
+    // If property-detail.html is in the
+    // same Customer folder as home.html
+
     window.location.href =
-        `../Customer/property-detail.html?id=${id}`;
+        `property-detail.html?id=${encodeURIComponent(id)}`;
 
 }
 
@@ -238,8 +389,21 @@ function viewProperty(id) {
 
 function contactOwner(id) {
 
+    if (!id) {
+
+        console.error(
+            "Property ID is missing."
+        );
+
+        return;
+    }
+
+
+    // If contact-owner.html is in the
+    // same Customer folder as home.html
+
     window.location.href =
-        `../Customer/contact-owner.html?propertyId=${id}`;
+        `contact-owner.html?propertyId=${encodeURIComponent(id)}`;
 
 }
 
@@ -250,23 +414,82 @@ function contactOwner(id) {
 
 function addToWishlist(id) {
 
-    let wishlist =
-        JSON.parse(localStorage.getItem("wishlist")) || [];
+    if (!id) {
 
-    if (!wishlist.includes(id)) {
+        console.error(
+            "Property ID is missing."
+        );
 
-        wishlist.push(id);
+        return;
+    }
+
+
+    // Get existing wishlist
+
+    let wishlist = [];
+
+    try {
+
+        wishlist =
+            JSON.parse(
+                localStorage.getItem("wishlist")
+            ) || [];
+
+    } catch (error) {
+
+        console.error(
+            "Unable to read wishlist:",
+            error
+        );
+
+        wishlist = [];
+
+    }
+
+
+    // Make sure IDs are compared consistently
+
+    const propertyId =
+        Number(id);
+
+
+    // ==========================================
+    // Add Property
+    // ==========================================
+
+    if (!wishlist.includes(propertyId)) {
+
+        wishlist.push(propertyId);
+
 
         localStorage.setItem(
             "wishlist",
             JSON.stringify(wishlist)
         );
 
-        alert("❤️ Property added to wishlist!");
 
-    } else {
+        alert(
+            "❤️ Property added to wishlist!"
+        );
 
-        alert("Property is already in your wishlist.");
+
+        console.log(
+            "Wishlist:",
+            wishlist
+        );
+
+    }
+
+
+    // ==========================================
+    // Already Added
+    // ==========================================
+
+    else {
+
+        alert(
+            "Property is already in your wishlist."
+        );
 
     }
 
@@ -274,10 +497,18 @@ function addToWishlist(id) {
 
 
 // ==========================================
-// Start
+// Start Application
 // ==========================================
 
 document.addEventListener(
     "DOMContentLoaded",
-    loadProperties
+    function () {
+
+        console.log(
+            "Customer Home DOM Loaded"
+        );
+
+        loadProperties();
+
+    }
 );
