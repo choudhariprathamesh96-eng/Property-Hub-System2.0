@@ -253,7 +253,7 @@ header{
 
     background:
     linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-    url("../images/bg.jpeg");
+    url("bg.jpeg");
 
     background-size:cover;
 
