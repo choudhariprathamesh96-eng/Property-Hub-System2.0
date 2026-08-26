@@ -6,20 +6,10 @@
 console.log("Home Page Loaded");
 
 // ==========================================
-// API CONFIGURATION
+// API
 // ==========================================
 
-// IMPORTANT:
-// Replace this with your DEPLOYED Spring Boot backend URL.
-//
-// Example:
-// const API_URL = "https://your-backend.onrender.com/properties";
-//
-// DO NOT use:
-// http://localhost:8080/properties
-//
-// DO NOT use your Netlify frontend URL.
-
+// LOCAL TESTING
 const API_URL = "http://localhost:8080/properties";
 
 
@@ -27,355 +17,245 @@ const API_URL = "http://localhost:8080/properties";
 // Load Properties
 // ==========================================
 
-function loadProperties() {
+async function loadProperties() {
 
-    console.log("Loading properties from:", API_URL);
+    const container =
+        document.getElementById("propertyContainer");
 
-    fetch(API_URL)
-        .then(response => {
+    if (!container) {
+        console.error("propertyContainer not found");
+        return;
+    }
 
-            if (!response.ok) {
-                throw new Error(
-                    "API Error: " + response.status
-                );
-            }
+    try {
 
-            return response.json();
-        })
+        console.log("Loading properties from:", API_URL);
 
-        .then(properties => {
+        const response = await fetch(API_URL);
 
-            console.log(
-                "Properties received from API:",
-                properties
+        if (!response.ok) {
+            throw new Error(
+                "API Error: " + response.status
             );
+        }
 
-            const container =
-                document.getElementById("propertyContainer");
+        const properties = await response.json();
 
-            if (!container) {
+        console.log("Loaded properties:", properties);
 
-                console.error(
-                    "ERROR: propertyContainer not found in HTML."
-                );
+        // Clear existing cards
+        container.innerHTML = "";
 
-                return;
-            }
+        // ==========================================
+        // No properties
+        // ==========================================
 
-            // Clear old properties
-            container.innerHTML = "";
+        if (
+            !Array.isArray(properties) ||
+            properties.length === 0
+        ) {
 
+            container.innerHTML = `
+                <div class="no-properties">
+                    <h2>No Properties Available</h2>
+                    <p>No properties have been added yet.</p>
+                </div>
+            `;
 
-            // ==========================================
-            // No Properties
-            // ==========================================
-
-            if (
-                !properties ||
-                !Array.isArray(properties) ||
-                properties.length === 0
-            ) {
-
-                container.innerHTML = `
-                    <div style="
-                        width:100%;
-                        text-align:center;
-                        padding:40px;
-                    ">
-
-                        <h2>No Properties Available</h2>
-
-                        <p>
-                            Please check again later.
-                        </p>
-
-                    </div>
-                `;
-
-                return;
-            }
+            return;
+        }
 
 
-            // ==========================================
-            // Create Property Cards
-            // ==========================================
+        // ==========================================
+        // Show ONLY loaded properties
+        // ==========================================
 
-            properties.forEach(property => {
+        properties.forEach(property => {
 
-                const card =
-                    document.createElement("div");
+            const card =
+                document.createElement("div");
 
-                card.className = "property-card";
+            card.className = "property-card";
 
+            const image =
+                property.image &&
+                property.image.trim() !== ""
+                    ? property.image
+                    : "apartment1.png";
 
-                // ==========================================
-                // Property Values
-                // ==========================================
+            const title =
+                property.title || "Untitled Property";
 
-                const propertyId =
-                    property.id;
+            const type =
+                property.type || "Property";
 
-                const title =
-                    property.title ||
-                    "Untitled Property";
+            const location =
+                property.location || "Location unavailable";
 
-                const type =
-                    property.type ||
-                    "Property";
+            const bedrooms =
+                property.bedrooms ?? 0;
 
-                const location =
-                    property.location ||
-                    "Location unavailable";
+            const bathrooms =
+                property.bathrooms ?? 0;
 
-                const bedrooms =
-                    property.bedrooms || 0;
+            const area =
+                property.area ?? 0;
 
-                const bathrooms =
-                    property.bathrooms || 0;
-
-                const area =
-                    property.area || 0;
-
-                const price =
-                    Number(property.price || 0);
-
-                const image =
-                    property.image ||
-                    "apartment1.png";
+            const price =
+                Number(property.price || 0);
 
 
-                // ==========================================
-                // Property Card HTML
-                // ==========================================
+            card.innerHTML = `
 
-                card.innerHTML = `
+                <div class="property-image-wrapper">
 
-                    <!-- =================================
-                         PROPERTY IMAGE
-                    ================================== -->
+                    <span class="property-status">
+                        ${type}
+                    </span>
 
-                    <div class="property-image-wrapper">
+                    <button
+                        type="button"
+                        class="wishlist-btn"
+                        onclick="addToWishlist(${property.id})"
+                        title="Add to Wishlist"
+                    >
+                        <i class="fa-solid fa-heart"></i>
+                    </button>
 
-                        <span class="property-status">
-                            ${type}
+                    <img
+                        src="${image}"
+                        alt="${title}"
+                        class="property-image"
+                        onerror="
+                            this.onerror=null;
+                            this.src='apartment1.png';
+                        "
+                    >
+
+                </div>
+
+
+                <div class="property-content">
+
+                    <h3>
+                        ${title}
+                    </h3>
+
+                    <p class="location">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        ${location}
+
+                    </p>
+
+
+                    <div class="property-info">
+
+                        <span>
+                            <i class="fa-solid fa-bed"></i>
+                            ${bedrooms} BHK
                         </span>
 
+                        <span>
+                            <i class="fa-solid fa-bath"></i>
+                            ${bathrooms} Bath
+                        </span>
 
-                        <!-- Wishlist Button -->
-
-                        <button
-                            type="button"
-                            class="wishlist-btn"
-                            onclick="addToWishlist(${propertyId})"
-                            title="Add to Wishlist"
-                        >
-
-                            <i class="fa-solid fa-heart"></i>
-
-                        </button>
-
-
-                        <!-- Property Image -->
-
-                        <img
-                            src="${image}"
-                            alt="${title}"
-                            class="property-image"
-                            onerror="this.onerror=null; this.src='apartment1.png';"
-                        >
+                        <span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            ${area} Sq.ft
+                        </span>
 
                     </div>
 
 
-                    <!-- =================================
-                         PROPERTY CONTENT
-                    ================================== -->
+                    <h2 class="price">
 
-                    <div class="property-content">
+                        ₹${price.toLocaleString("en-IN")}
 
+                        <span>
+                            / Month
+                        </span>
 
-                        <!-- Property Title -->
-
-                        <h3>
-                            ${title}
-                        </h3>
+                    </h2>
 
 
-                        <!-- Location -->
-
-                        <p class="location">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            ${location}
-
-                        </p>
-
-
-                        <!-- Property Information -->
-
-                        <div class="property-info">
-
-                            <span>
-
-                                <i class="fa-solid fa-bed"></i>
-
-                                ${bedrooms} BHK
-
-                            </span>
-
-
-                            <span>
-
-                                <i class="fa-solid fa-bath"></i>
-
-                                ${bathrooms} Bath
-
-                            </span>
-
-
-                            <span>
-
-                                <i class="fa-solid fa-ruler-combined"></i>
-
-                                ${area} Sq.ft
-
-                            </span>
-
-                        </div>
-
-
-                        <!-- Price -->
-
-                        <h2 class="price">
-
-                            ₹${price.toLocaleString("en-IN")}
-
-                            <span>
-                                / Month
-                            </span>
-
-                        </h2>
-
-
-                        <!-- Buttons -->
-
-                        <div class="property-buttons">
-
-
-                            <!-- View Details -->
-
-                            <button
-                                type="button"
-                                class="details-btn"
-                                onclick="viewProperty(${propertyId})"
-                            >
-
-                                <i class="fa-solid fa-eye"></i>
-
-                                View Details
-
-                            </button>
-
-                        </div>
-
-
-                        <!-- Contact Owner -->
+                    <div class="property-buttons">
 
                         <button
                             type="button"
-                            class="contact-btn"
-                            onclick="contactOwner(${propertyId})"
+                            class="details-btn"
+                            onclick="viewProperty(${property.id})"
                         >
 
-                            <i class="fa-solid fa-phone"></i>
+                            <i class="fa-solid fa-eye"></i>
 
-                            Contact Owner
+                            View Details
 
                         </button>
 
                     </div>
 
-                `;
 
+                    <button
+                        type="button"
+                        class="contact-btn"
+                        onclick="contactOwner(${property.id})"
+                    >
 
-                // Add card to container
+                        <i class="fa-solid fa-phone"></i>
 
-                container.appendChild(card);
+                        Contact Owner
 
-            });
+                    </button>
 
-        })
+                </div>
 
-        .catch(error => {
+            `;
 
-            console.error(
-                "Unable to load properties:",
-                error
-            );
-
-
-            const container =
-                document.getElementById("propertyContainer");
-
-
-            if (container) {
-
-                container.innerHTML = `
-
-                    <div style="
-                        width:100%;
-                        text-align:center;
-                        padding:50px;
-                    ">
-
-                        <h2 style="color:red;">
-                            Unable to load properties
-                        </h2>
-
-                        <p>
-                            Unable to connect to the
-                            Property Hub server.
-                        </p>
-
-                        <p style="
-                            color:#666;
-                            margin-top:10px;
-                        ">
-                            Please check that the
-                            backend server is running
-                            and the API URL is correct.
-                        </p>
-
-                    </div>
-
-                `;
-
-            }
+            container.appendChild(card);
 
         });
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Unable to load properties:",
+            error
+        );
+
+        container.innerHTML = `
+            <div class="no-properties">
+
+                <h2>
+                    Unable to Load Properties
+                </h2>
+
+                <p>
+                    Please make sure the Spring Boot
+                    backend is running.
+                </p>
+
+            </div>
+        `;
+
+    }
 
 }
 
 
 // ==========================================
-// View Property Details
+// View Property
 // ==========================================
 
 function viewProperty(id) {
 
     if (!id) {
-
-        console.error(
-            "Property ID is missing."
-        );
-
         return;
     }
-
-
-    // If property-detail.html is in the
-    // same Customer folder as home.html
 
     window.location.href =
         `property-detail.html?id=${encodeURIComponent(id)}`;
@@ -390,17 +270,8 @@ function viewProperty(id) {
 function contactOwner(id) {
 
     if (!id) {
-
-        console.error(
-            "Property ID is missing."
-        );
-
         return;
     }
-
-
-    // If contact-owner.html is in the
-    // same Customer folder as home.html
 
     window.location.href =
         `contact-owner.html?propertyId=${encodeURIComponent(id)}`;
@@ -415,16 +286,8 @@ function contactOwner(id) {
 function addToWishlist(id) {
 
     if (!id) {
-
-        console.error(
-            "Property ID is missing."
-        );
-
         return;
     }
-
-
-    // Get existing wishlist
 
     let wishlist = [];
 
@@ -435,56 +298,27 @@ function addToWishlist(id) {
                 localStorage.getItem("wishlist")
             ) || [];
 
-    } catch (error) {
-
-        console.error(
-            "Unable to read wishlist:",
-            error
-        );
+    }
+    catch (error) {
 
         wishlist = [];
 
     }
 
-
-    // Make sure IDs are compared consistently
-
-    const propertyId =
-        Number(id);
-
-
-    // ==========================================
-    // Add Property
-    // ==========================================
+    const propertyId = Number(id);
 
     if (!wishlist.includes(propertyId)) {
 
         wishlist.push(propertyId);
-
 
         localStorage.setItem(
             "wishlist",
             JSON.stringify(wishlist)
         );
 
-
-        alert(
-            "❤️ Property added to wishlist!"
-        );
-
-
-        console.log(
-            "Wishlist:",
-            wishlist
-        );
+        alert("❤️ Property added to wishlist!");
 
     }
-
-
-    // ==========================================
-    // Already Added
-    // ==========================================
-
     else {
 
         alert(
@@ -497,18 +331,10 @@ function addToWishlist(id) {
 
 
 // ==========================================
-// Start Application
+// Start
 // ==========================================
 
 document.addEventListener(
     "DOMContentLoaded",
-    function () {
-
-        console.log(
-            "Customer Home DOM Loaded"
-        );
-
-        loadProperties();
-
-    }
+    loadProperties
 );
