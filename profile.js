@@ -40,7 +40,7 @@ const aboutInput =
 // ==========================================
 
 const DEFAULT_IMAGE =
-    "default-user.png";
+    "icons/default-user.png";
 
 // ==========================================
 // Get Logged-In User
