@@ -20,7 +20,7 @@ console.log("Home Page Loaded");
 //
 // DO NOT use your Netlify frontend URL.
 
-const API_URL = "YOUR_DEPLOYED_BACKEND_URL/properties";
+const API_URL = "http://localhost:8080/properties";
 
 
 // ==========================================
