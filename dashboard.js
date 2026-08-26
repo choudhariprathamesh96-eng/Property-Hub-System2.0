@@ -6,6 +6,22 @@
 console.log("Dashboard Loaded");
 
 // =======================================
+// API CONFIGURATION
+// =======================================
+
+// IMPORTANT:
+// Do NOT use localhost when the frontend is deployed on Netlify.
+//
+// After deploying your Spring Boot backend, change this to:
+//
+// const PROPERTY_API =
+//     "https://YOUR-BACKEND-URL.com/properties";
+
+const PROPERTY_API =
+    "https://YOUR-BACKEND-URL.com/properties";
+
+
+// =======================================
 // LOAD LOGGED-IN USER
 // =======================================
 
@@ -17,7 +33,6 @@ function loadLoggedInUser() {
 
         console.log("No logged-in user found.");
 
-        // Change this path if your login file has a different name
         window.location.href = "../Home/login.html";
 
         return;
@@ -29,6 +44,7 @@ function loadLoggedInUser() {
 
         const userName = user.fullname || "User";
 
+
         // Sidebar username
         const sidebarUserName =
             document.getElementById("sidebarUserName");
@@ -36,6 +52,7 @@ function loadLoggedInUser() {
         if (sidebarUserName) {
             sidebarUserName.textContent = userName;
         }
+
 
         // Top-right username
         const topUserName =
@@ -45,6 +62,7 @@ function loadLoggedInUser() {
             topUserName.textContent = userName;
         }
 
+
         // Welcome username
         const welcomeUserName =
             document.getElementById("welcomeUserName");
@@ -52,6 +70,7 @@ function loadLoggedInUser() {
         if (welcomeUserName) {
             welcomeUserName.textContent = userName;
         }
+
 
         console.log("Logged-in user:", userName);
 
@@ -67,14 +86,6 @@ function loadLoggedInUser() {
         window.location.href = "../Home/login.html";
     }
 }
-
-
-// =======================================
-// API
-// =======================================
-
-const PROPERTY_API =
-    "http://localhost:8080/properties";
 
 
 // =======================================
@@ -95,34 +106,54 @@ const tableBody =
 
 
 // =======================================
-// LOAD PROPERTIES FROM MYSQL
+// LOAD PROPERTIES
 // =======================================
 
 async function loadProperties() {
 
     try {
 
-        console.log("Loading properties from MySQL...");
+        console.log(
+            "Loading properties from:",
+            PROPERTY_API
+        );
+
 
         const response =
-            await fetch(PROPERTY_API);
+            await fetch(PROPERTY_API, {
+                method: "GET",
+                headers: {
+                    "Accept": "application/json"
+                }
+            });
+
 
         if (!response.ok) {
 
             throw new Error(
-                "Unable to load properties. Status: " +
+                "Unable to load properties. HTTP Status: " +
                 response.status
             );
-
         }
+
 
         const properties =
             await response.json();
+
 
         console.log(
             "Properties loaded:",
             properties
         );
+
+
+        if (!Array.isArray(properties)) {
+
+            throw new Error(
+                "Invalid response received from server."
+            );
+        }
+
 
         updateCards(properties);
 
@@ -135,16 +166,27 @@ async function loadProperties() {
             error
         );
 
+
         if (tableBody) {
 
             tableBody.innerHTML = `
                 <tr>
-                    <td colspan="7"
-                        style="padding:40px;text-align:center;">
 
-                        <i class="fa-solid fa-triangle-exclamation"
-                           style="font-size:45px;color:#e74c3c;">
-                        </i>
+                    <td
+                        colspan="7"
+                        style="
+                            padding:40px;
+                            text-align:center;
+                        "
+                    >
+
+                        <i
+                            class="fa-solid fa-triangle-exclamation"
+                            style="
+                                font-size:45px;
+                                color:#e74c3c;
+                            "
+                        ></i>
 
                         <br><br>
 
@@ -154,16 +196,21 @@ async function loadProperties() {
 
                         <br><br>
 
-                        Please make sure Spring Boot is running.
+                        Please check that the backend
+                        server is online.
+
+                        <br><br>
+
+                        <small>
+                            ${error.message}
+                        </small>
 
                     </td>
+
                 </tr>
             `;
-
         }
-
     }
-
 }
 
 
@@ -177,56 +224,54 @@ function updateCards(properties) {
         properties = [];
     }
 
+
     // Total properties
     if (totalProperties) {
 
         totalProperties.textContent =
             properties.length;
-
     }
 
 
-    // ===================================
-    // Count Rent / Sale
-    // ===================================
-
+    // Rent / Sale count
     let rent = 0;
     let sale = 0;
+
 
     properties.forEach(property => {
 
         const status =
             String(property.status || "")
+                .trim()
                 .toLowerCase();
 
-        if (status.includes("rent")) {
+
+        if (
+            status.includes("rent") ||
+            status.includes("rental")
+        ) {
 
             rent++;
 
-        } else if (status.includes("sale")) {
+        } else if (
+            status.includes("sale") ||
+            status.includes("sell")
+        ) {
 
             sale++;
-
         }
 
     });
 
 
     if (rentProperties) {
-
-        rentProperties.textContent =
-            rent;
-
+        rentProperties.textContent = rent;
     }
 
 
     if (saleProperties) {
-
-        saleProperties.textContent =
-            sale;
-
+        saleProperties.textContent = sale;
     }
-
 }
 
 
@@ -240,30 +285,37 @@ function displayProperties(properties) {
         return;
     }
 
+
     tableBody.innerHTML = "";
 
 
     // ===================================
-    // No Properties
+    // NO PROPERTIES
     // ===================================
 
-    if (!properties || properties.length === 0) {
+    if (
+        !Array.isArray(properties) ||
+        properties.length === 0
+    ) {
 
         tableBody.innerHTML = `
             <tr>
 
-                <td colspan="7"
+                <td
+                    colspan="7"
                     style="
                         padding:40px;
                         text-align:center;
-                    ">
+                    "
+                >
 
-                    <i class="fa-solid fa-house-circle-xmark"
-                       style="
-                           font-size:50px;
-                           color:#999;
-                       ">
-                    </i>
+                    <i
+                        class="fa-solid fa-house-circle-xmark"
+                        style="
+                            font-size:50px;
+                            color:#999;
+                        "
+                    ></i>
 
                     <br><br>
 
@@ -273,11 +325,11 @@ function displayProperties(properties) {
 
                     <br><br>
 
-                    <a href="add-property.html"
-                       class="action-btn">
-
+                    <a
+                        href="add-property.html"
+                        class="action-btn"
+                    >
                         + Add First Property
-
                     </a>
 
                 </td>
@@ -290,25 +342,38 @@ function displayProperties(properties) {
 
 
     // ===================================
-    // Display Properties
+    // DISPLAY PROPERTIES
     // ===================================
 
     properties.forEach(property => {
 
+
+        // Property image
         const image =
             property.image
                 ? `../../assets/images/${property.image}`
                 : "../../assets/images/apartment1.png";
 
+
+        // Property status
         const status =
             property.status || "Active";
 
+
+        // Location
         const location =
             property.location || "-";
 
+
+        // Price
         const price =
             Number(property.price || 0)
                 .toLocaleString("en-IN");
+
+
+        // Property ID
+        const propertyId =
+            property.id;
 
 
         tableBody.innerHTML += `
@@ -339,27 +404,21 @@ function displayProperties(properties) {
                 <!-- PROPERTY -->
 
                 <td>
-
                     ${property.title || "-"}
-
                 </td>
 
 
-                <!-- CITY -->
+                <!-- CITY / LOCATION -->
 
                 <td>
-
                     ${location}
-
                 </td>
 
 
                 <!-- PRICE -->
 
                 <td>
-
                     ₹${price}
-
                 </td>
 
 
@@ -368,9 +427,7 @@ function displayProperties(properties) {
                 <td>
 
                     <span class="active-status">
-
                         ${status}
-
                     </span>
 
                 </td>
@@ -379,9 +436,7 @@ function displayProperties(properties) {
                 <!-- VIEWS -->
 
                 <td>
-
                     0
-
                 </td>
 
 
@@ -390,8 +445,10 @@ function displayProperties(properties) {
                 <td>
 
                     <button
+                        type="button"
                         class="edit"
-                        onclick="editProperty(${property.id})">
+                        onclick="editProperty(${propertyId})"
+                    >
 
                         <i class="fa-solid fa-pen"></i>
                         Edit
@@ -400,8 +457,10 @@ function displayProperties(properties) {
 
 
                     <button
+                        type="button"
                         class="delete"
-                        onclick="deleteProperty(${property.id})">
+                        onclick="deleteProperty(${propertyId})"
+                    >
 
                         <i class="fa-solid fa-trash"></i>
                         Delete
@@ -415,7 +474,6 @@ function displayProperties(properties) {
         `;
 
     });
-
 }
 
 
@@ -432,9 +490,15 @@ function editProperty(id) {
         return;
     }
 
-    window.location.href =
-        `add-property.html?id=${id}`;
 
+    console.log(
+        "Editing property:",
+        id
+    );
+
+
+    window.location.href =
+        `add-property.html?id=${encodeURIComponent(id)}`;
 }
 
 
@@ -473,9 +537,12 @@ async function deleteProperty(id) {
 
         const response =
             await fetch(
-                `${PROPERTY_API}/${id}`,
+                `${PROPERTY_API}/${encodeURIComponent(id)}`,
                 {
-                    method: "DELETE"
+                    method: "DELETE",
+                    headers: {
+                        "Accept": "application/json"
+                    }
                 }
             );
 
@@ -485,23 +552,24 @@ async function deleteProperty(id) {
             const errorText =
                 await response.text();
 
-            throw new Error(
-                "Delete failed. Status: " +
-                response.status +
-                " " +
-                errorText
-            );
 
+            throw new Error(
+                "Delete failed. HTTP Status: " +
+                response.status +
+                (errorText
+                    ? " - " + errorText
+                    : "")
+            );
         }
 
 
         alert(
-            "✅ Property deleted successfully!"
+            "Property deleted successfully!"
         );
 
 
         // Reload properties
-        loadProperties();
+        await loadProperties();
 
 
     } catch (error) {
@@ -513,12 +581,10 @@ async function deleteProperty(id) {
 
 
         alert(
-            "❌ Unable to delete property.\n\n" +
+            "Unable to delete property.\n\n" +
             error.message
         );
-
     }
-
 }
 
 
@@ -531,13 +597,12 @@ function updateDate() {
     const todayDate =
         document.getElementById("todayDate");
 
+
     if (todayDate) {
 
         todayDate.textContent =
             new Date().toDateString();
-
     }
-
 }
 
 
@@ -553,13 +618,16 @@ document.addEventListener(
             "Initializing Owner Dashboard..."
         );
 
+
         // Load logged-in user's name
         loadLoggedInUser();
 
-        // Show current date
+
+        // Current date
         updateDate();
 
-        // Load properties from MySQL
+
+        // Load properties
         loadProperties();
 
     }
